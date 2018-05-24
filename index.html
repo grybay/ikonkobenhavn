@@ -9,6 +9,27 @@
 </head>
 
 <body>
+    <header>
+        <div class="menu">
+            <button class="burger">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </button>
+            <nav>
+                <div id="menu_open">
+                    <a href="index.html" id="home_logo">
+                        <img src="filer/ikon_logo.svg" alt="logo">
+                    </a>
+                    <a href="shopkategori.html" id="nav_shop">Shop</a>
+                    <a href="journal.html" id="nav_journal">Journal</a>
+                    <a href="om.html" id="nav_om">Om</a>
+                    <a href="kontakt.html" id="nav_kontakt">Kontakt</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
     <section id="splash">
         <div id="dias"></div>
         <div id="logo"></div>
@@ -20,6 +41,7 @@
         </p>
         <img class="visionbillede" src="">
     </section>
+
     <footer>
         <div id="adresse">
             <p>IKON KØBENHAVN APS<br> NØRRE VOLDGADE 42 KLD.<br> KØBENHAVN K, 1358</p>
@@ -44,10 +66,16 @@
         </div>
     </footer>
 
+    <script>
+        // burgermenu
+        function toggleMenu() {
+            document.querySelector(".burger").classList.toggle("change");
+            document.querySelector("nav").classList.toggle("show");
+        }
 
-
-
-    <script src=""></script>
+        document.querySelector(".burger").addEventListener("click", toggleMenu);
+        document.querySelector("nav").addEventListener("click", toggleMenu);
+    </script>
 </body>
 
 </html>
