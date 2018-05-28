@@ -30,6 +30,8 @@
         </div>
     </header>
 
+    <section id="display"></section>
+
     <footer>
         <div id="adresse">
             <p>IKON KØBENHAVN APS<br> NØRRE VOLDGADE 42 KLD.<br> KØBENHAVN K, 1358</p>
@@ -54,7 +56,57 @@
         </div>
     </footer>
 
+    <template id="temp_event">
+            <article id="article_event" data-event>
+                <h2 data-header></h2>
+                <h3 data-dato></h3>
+                <p data-tekst></p>
+                <div class="billede_event">
+                    <img data-image src="" alt="">
+                </div>
+                <div class="dato_event"></div>
+            </article>
+        </template>
+
+
+
     <script>
+        //EVENT
+        let jSonUrl =
+            "http://gryfaberbay.dk/ikon/wordpress/wp-json/wp/v2/event";
+        let event = [];
+        let display = document.querySelector("#display");
+        let template = document.querySelector("#temp_event");
+
+        document.addEventListener("DOMContentLoaded", hentJson);
+
+        async function hentJson() {
+            let dataJson = await fetch(jSonUrl);
+            events = await dataJson.json();
+            //viser arrayet efter json er hentet ind
+            console.log(events);
+            visEvents();
+        }
+
+        function visEvents() {
+            events.forEach(event => {
+                let klon = template.cloneNode(true).content;
+                console.log(klon);
+                klon.querySelector("[data-header]").textContent = event.title.rendered;
+                klon.querySelector("[data-image]").src = event.acf.billede.url;
+                klon.querySelector("[data-image]").alt = "billede af" + event.acf.billede.title;
+                klon.querySelector("[data-dato]").textContent = event.acf.dato;
+                klon.querySelector("[data-tekst]").innerHTML = event.acf.tekst;
+
+
+                // appendChild betyder læg mere til. Resultere at flere emner lægger sig i bunden
+                display.appendChild(klon);
+            });
+        }
+
+
+
+
         // burgermenu
         function toggleMenu() {
             document.querySelector(".burger").classList.toggle("change");
