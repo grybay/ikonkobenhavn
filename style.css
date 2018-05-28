@@ -115,7 +115,7 @@ body {
 .shortcoffeetable img,
 .longcoffeetable img {
     height: auto;
-    width: 50%;
+    width: 40%;
 }
 
 .cube,
@@ -123,6 +123,7 @@ body {
 .shortcoffeetable,
 .longcoffeetable {
     padding-top: 100px;
+    text-align: center;
 
 }
 
