@@ -104,31 +104,33 @@
 
         function lavFiltrering() {
             produkter = produkter.filter(coffee_table =>
-                coffee_table.acf[filtertype] == filternavn);
+                coffee_table.acf.tags[0]);
             lavKnapFiltrering();
         }
 
         function lavKnapFiltrering() {
+            console.log("hej" + produkter);
             if (filternavn_knap != "Alle") {
                 produkter = produkter.filter(coffee_table =>
-                    coffee_table.acf[filtertype] == filternavn);
+                    coffee_table.acf[filtertype_knap] == filternavn_knap);
             }
-
-
             visCoffeeTable();
         }
 
         function visCoffeeTable() {
             console.log("hej hej");
             console.log(produkter);
+            console.log(produkter.acf.tags[0]);
 
-            //            console.log(produkter.acf.tags[0]);
-            //            produkter.forEach(coffee_table => {
+            display.innerHTML = "";
 
-            //                console.log(klon);
-            //                let klon = template.cloneNode(true).content;
-            //                klon.querySelector("[data-image]").src = coffee_table.acf.billede.url;
-            //        });
+            produkter.forEach(table => {
+
+                let klon = template.cloneNode(true).content;
+                klon.querySelector("[data-image]").src = table.acf.billede.url;
+                klon.querySelector("[data-image]").alt = "billede af" + table.acf.billede.title;
+                display.appendChild(klon);
+            })
         }
 
 
