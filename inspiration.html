@@ -30,6 +30,15 @@
         </div>
     </header>
 
+    <div id="popup">
+        <button id="close">Close</button>
+        <div id="popupindhold">
+            <img src="" alt="" class="single-img" data-billede>
+            <h2 class="single-navn" data-navn>info</h2>
+            <p class="single-beskrivelse"data-beskrivelse></p>
+            </div>
+        </div>
+
     <section id="display"></section>
 
     <section id="instagalleri">
@@ -93,6 +102,7 @@
                 let klon = template.cloneNode(true).content;
                 console.log(klon);
                 klon.querySelector("[data-header]").textContent = inspiration.title.rendered;
+                klon.querySelector("[data-beskrivelse]").textContent = inspiration.acf.tekst;
                 klon.querySelector("[data-image]").src = inspiration.acf.billede.url;
                 klon.querySelector("[data-image]").alt = "billede af" + inspiration.acf.billede.title;
                /* klon.querySelector(".linktosingle").addEventListener("click", () => {
