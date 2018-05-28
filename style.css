@@ -127,3 +127,12 @@ body {
     height: auto;
     width: 50%;
 }
+
+.cube,
+.coffeetable,
+.shortcoffeetable,
+.longcoffeetable {
+    padding-top: 100px;
+    padding-left: 130px;
+
+}
