@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SHORT COFFEE TABLE</title>
+    <title>SHORT CONSOLE TABLE</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -63,9 +63,9 @@
         </div>
     </footer>
 
-    <template id="temp_coffee_table">
-        <article id="article_coffee_table" class="linktosingle">
-            <div class="billede_coffee_table">
+    <template id="temp_console_table">
+        <article id="article_console_table" class="linktosingle">
+            <div class="billede_console_table">
                 <img data-image src="" alt="">
                 <img class="logo" data-logo src="" alt="">
             </div>
@@ -73,14 +73,14 @@
     </template>
 
     <script>
-        //SHORT COFFEE TABLE
+        //SHORT CONSOLE TABLE
 
         let jSonUrl = "http://gryfaberbay.dk/ikon/wordpress/wp-json/wp/v2/produkt?per_page=100";
         let produkter = [];
         let display =
             document.querySelector("#display");
         let template =
-            document.querySelector("temp_coffee_table");
+            document.querySelector("temp_console_table");
         let filtertype_knap;
         let filternavn_knap = "Alle";
         let filtertype;
@@ -103,21 +103,21 @@
         }
 
         function lavFiltrering() {
-            produkter = produkter.filter(coffee_table =>
-                coffee_table.acf.tags[0]);
+            produkter = produkter.filter(console_table =>
+                console_table.acf.tags[0]);
             lavKnapFiltrering();
         }
 
         function lavKnapFiltrering() {
             console.log("hej" + produkter);
             if (filternavn_knap != "Alle") {
-                produkter = produkter.filter(coffee_table =>
-                    coffee_table.acf[filtertype_knap] == filternavn_knap);
+                produkter = produkter.filter(console_table =>
+                    console_table.acf[filtertype_knap] == filternavn_knap);
             }
-            visCoffeeTable();
+            visConsoleTable();
         }
 
-        function visCoffeeTable() {
+        function visConsoleTable() {
             console.log("hej hej");
             console.log(produkter);
             console.log(produkter.acf.tags[0]);
@@ -142,6 +142,7 @@
 
         document.querySelector(".burger").addEventListener("click", toggleMenu);
         document.querySelector("nav").addEventListener("click", toggleMenu);
+
     </script>
 </body>
 
