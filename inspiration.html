@@ -30,14 +30,6 @@
         </div>
     </header>
 
-    <div id="popup">
-        <button id="close">Close</button>
-        <div id="popupindhold">
-            <img src="" alt="" class="single-img" data-billede>
-            <h2 class="single-navn" data-navn>info</h2>
-            <p class="single-beskrivelse"data-beskrivelse></p>
-            </div>
-        </div>
 
     <section id="display"></section>
 
@@ -70,7 +62,7 @@
         </div>
     </footer>
     <template id="temp_inspiration">
-            <article id="article_inspiration" class="linktosingle">
+            <article id="article_inspiration" data-inspiration>
                 <h2 data-header></h2>
                 <div class="billede_inspiration">
                     <img data-image src="" alt="">
@@ -102,14 +94,29 @@
                 let klon = template.cloneNode(true).content;
                 console.log(klon);
                 klon.querySelector("[data-header]").textContent = inspiration.title.rendered;
-                klon.querySelector("[data-beskrivelse]").textContent = inspiration.acf.tekst;
                 klon.querySelector("[data-image]").src = inspiration.acf.billede.url;
                 klon.querySelector("[data-image]").alt = "billede af" + inspiration.acf.billede.title;
-               /* klon.querySelector(".linktosingle").addEventListener("click", () => {
-                    location.href = "single_bar.html?id=" + inspiration.id;
-                });*/
+
+             // appendChild betyder læg mere til. Resultere at flere emner lægger sig i bunden
                 display.appendChild(klon);
             });
+        }
+
+        function openModal() {
+            let myId = this.getAttribute("data-id");
+            // hvis vores myId = ret.id så vis indhold
+            let single = retter.find(ret => {
+                if (myId == ret.id) {
+                    document.querySelector("#popup").style.visibility = "visible";
+                    document.querySelector("[data-billede]").alt = "Billede af " + ret.navn;
+                    document.querySelector("[data-navn]").textContent = ret.navn;
+                    document.querySelector("[data-billede]").setAttribute("src", "imgs/medium/" + ret.billede + "-md.jpg");
+                    document.querySelector("[data-langbeskrivelse]").textContent = ret.langbeskrivelse;
+                    document.querySelector("[data-oprindelsesregion]").textContent = "Fra " + ret.oprindelsesregion + "regionen";
+                    document.querySelector("[data-pris]").textContent = ret.pris + " kr";
+                    document.querySelector("#popup button").addEventListener("click", closeModal);
+                }
+            })
         }
 
 
