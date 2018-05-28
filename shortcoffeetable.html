@@ -29,7 +29,16 @@
             </nav>
         </div>
     </header>
+    <main>
+        <section id=filter>
+            <button class=""></button>
+            <button class=""></button>
+            <button class=""></button>
 
+        </section>
+        <section id="display">
+        </section>
+    </main>
     <footer>
         <div id="adresse">
             <p>IKON KØBENHAVN APS<br> NØRRE VOLDGADE 42 KLD.<br> KØBENHAVN K, 1358</p>
@@ -54,7 +63,75 @@
         </div>
     </footer>
 
+    <template id="temp_coffee_table">
+        <article id="article_coffee_table" class="linktosingle">
+            <div class="billede_coffee_table">
+                <img data-image src="" alt="">
+                <img class="logo" data-logo src="" alt="">
+            </div>
+        </article>
+    </template>
+
     <script>
+        //SHORT COFFEE TABLE
+
+        let jSonUrl = "http://gryfaberbay.dk/ikon/wordpress/wp-json/wp/v2/produkt?per_page=100";
+        let produkter = [];
+        let display =
+            document.querySelector("#display");
+        let template =
+            document.querySelector("temp_coffee_table");
+        let filtertype_knap;
+        let filternavn_knap = "Alle";
+        let filtertype;
+        let filternavn = "Alle";
+        let filterknapper_ = document.querySelectorAll("#filter button").forEach(knap => {
+            knap.addEventListener("click", (e) => {
+                filtertype_knap = e.target.className;
+                filternavn_knap = e.target.textContent;
+                hentJson();
+            });
+        });
+
+        document.addEventListener("DOMContentLoaded", hentJson);
+
+        async function hentJson() {
+            let dataJson = await fetch(jSonUrl);
+            produkter = await dataJson.json();
+            lavFiltrering();
+            console.log("hej" + produkter);
+        }
+
+        function lavFiltrering() {
+            produkter = produkter.filter(coffee_table =>
+                coffee_table.acf[filtertype] == filternavn);
+            lavKnapFiltrering();
+        }
+
+        function lavKnapFiltrering() {
+            if (filternavn_knap != "Alle") {
+                produkter = produkter.filter(coffee_table =>
+                    coffee_table.acf[filtertype] == filternavn);
+            }
+
+
+            visCoffeeTable();
+        }
+
+        function visCoffeeTable() {
+            console.log("hej hej");
+            console.log(produkter);
+
+            //            console.log(produkter.acf.tags[0]);
+            //            produkter.forEach(coffee_table => {
+
+            //                console.log(klon);
+            //                let klon = template.cloneNode(true).content;
+            //                klon.querySelector("[data-image]").src = coffee_table.acf.billede.url;
+            //        });
+        }
+
+
         // burgermenu
         function toggleMenu() {
             document.querySelector(".burger").classList.toggle("change");
@@ -63,7 +140,6 @@
 
         document.querySelector(".burger").addEventListener("click", toggleMenu);
         document.querySelector("nav").addEventListener("click", toggleMenu);
-
     </script>
 </body>
 
