@@ -30,6 +30,25 @@
         </div>
     </header>
 
+    <section id="filtrering">
+        <button class="rød">Rød</button>
+        <button class="sort">Sort</button>
+        <button class="hvid">Hvid</button>
+        <button class="creme">Creme</button>
+        <button class="grå">Grå</button>
+        <button class="orange">Orange</button>
+        <button class="blomme">Blomme</button>
+        <button class="mørkeblå">Mørkeblå</button>
+        <button class="gul">Gul</button>
+        <button class="sølv_blå">Sølv Blå</button>
+        <button class="grøn">Grøn</button>
+        <button class="lyserød_grøn">Lyserød Grøn</button>
+        <button class="creme_glitter">Creme Glitter</button>
+        <button class="lyserød_blå">Lyserød Blå</button>
+        <button class="støvet_blå">Støvet Blå</button>
+    </section>
+
+
     <section id="display"></section>
 
     <footer>
@@ -85,6 +104,9 @@
         let display = document.querySelector("#display");
         let template = document.querySelector("#temp_coffeetable");
 
+        //FILTRERING
+        let filtertype;
+        let filternavn = "Alle";
 
          document.addEventListener("DOMContentLoaded", hentJson);
 
@@ -93,15 +115,26 @@
             coffee_tables = await dataJson.json();
             //viser arrayet efter json er hentet ind
             console.log(coffee_tables);
-            visCoffee_tables();
+            //visCoffee_tables();
+             lavFiltrering();
+
         }
 
-
-         function visCoffee_tables() {
+        function lavFiltrering () {
+            /*document.querySelector("#overskrift").textContent = filternavn;*/
+            if (filternavn != "Alle") {
+                coffee_table = coffee_table.filter(obs => obs.acf[filtertype] == filternavn);
+                console.log("lav filtrering");
+            }
+            visCoffee_tables();
+        }
+         function visCoffee_tables()  {
+             console.log("visCoffee_tables");
             coffee_tables.forEach(coffee_table => {
                 let klon = template.cloneNode(true).content;
                 console.log(klon);
                 klon.querySelector("[data-image]").src = coffee_table.acf.billede.url;
+                console.log(coffee_table.acf.billede.url);
                 klon.querySelector("[data-image]").alt = "billede af" + coffee_table.acf.billede.title;
                 klon.querySelector("[data-overskrift]").innerHTML = coffee_table.acf.overskrift;
                 klon.querySelector("[data-beskrivelse]").innerHTML = coffee_table.acf.beskrivelse_produkt;
@@ -116,6 +149,20 @@
                 display.appendChild(klon);
             });
         }
+
+
+
+        let filterknapper = document.querySelectorAll("#filtrering button").forEach(knap => {
+            knap.addEventListener("click", (e) => {
+                filtertype = e.target.className;
+                filternavn = e.target.textContent;
+                hentJson();
+                console.log("filterknapper", filtertype, filternavn);
+            });
+        });
+
+
+
 
 
 
