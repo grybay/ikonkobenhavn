@@ -30,6 +30,7 @@
         </div>
     </header>
 
+    <!-- Modtager data fra api'en -->
     <section id="display">
         <article id="article_produkt" data-produkt>
             <div class="label_produkt">
@@ -77,21 +78,20 @@
     <script>
         //CUBE SINGLE
 
+        //Henter url til den nuværende side
         let url = new URL(window.location.href);
+        //Søger i url'en
         let searchParams = new URLSearchParams(url.search);
+        //Finder id'et i url'en
         let id = searchParams.get("id");
+        //Sætter id'et ind på url'en
         let apiURL = "http://gryfaberbay.dk/ikon/wordpress/wp-json/wp/v2/cube/" + id;
+        //Definere en string
         let produkt = {};
         console.log(id);
 
-        /* let jSonUrl = "http://gryfaberbay.dk/ikon/wordpress/wp-json/wp/v2/cube";
-        let cube = [];
-        let display = document.querySelector("#display");
-        let template = document.querySelector("#temp_produkt");
-        */
-
-
         document.addEventListener("DOMContentLoaded", hentJson);
+
 
         async function hentJson() {
             let dataJson = await fetch(apiURL);
@@ -101,7 +101,7 @@
             visProdukt();
         }
 
-
+        //Henter indholdet til display-section
         function visProdukt() {
             document.querySelector("[data-image]").src = produkt.acf.billede.url;
             document.querySelector("[data-image]").alt = "billede af" + produkt.acf.billede.title;
