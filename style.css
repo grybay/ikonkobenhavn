@@ -108,6 +108,25 @@ body {
     }
 }
 
+/*------ SHOP KATEGORI ------*/
+
+.cube img,
+.coffeetable img,
+.shortcoffeetable img,
+.longcoffeetable img {
+    height: auto;
+    width: 40%;
+}
+
+.cube,
+.coffeetable,
+.shortcoffeetable,
+.longcoffeetable {
+    padding-top: 100px;
+    text-align: center;
+
+}
+
 
 /*------- TABLET -------*/
 
