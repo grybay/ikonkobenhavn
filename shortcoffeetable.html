@@ -10,6 +10,7 @@
 
 <body>
     <header>
+
         <div class="menu">
             <button class="burger">
             <div class="bar1"></div>
@@ -29,7 +30,11 @@
             </nav>
         </div>
     </header>
-    <main>
+
+     <section id="display"></section>
+
+
+    <!--<main>
         <section id=filter>
             <button class=""></button>
             <button class=""></button>
@@ -38,7 +43,8 @@
         </section>
         <section id="display">
         </section>
-    </main>
+    </main>-->
+
     <footer>
         <div id="adresse_footer">
             <p>IKON KØBENHAVN APS<br> NØRRE VOLDGADE 42 KLD.<br> KØBENHAVN K, 1358</p>
@@ -67,19 +73,81 @@
         </div>
     </footer>
 
-    <template id="temp_coffee_table">
+    <template id="temp_shortcoffeetable">
+            <article id="article_shortcoffeetable" data-inspiration>
+                <h1 data-overskrift></h1>
+                <p data-beskrivelse></p>
+                <p data-dimensioner></p>
+                <p data-pris></p>
+                <p data-tags></p>
+                <div class="billede_shortcoffeetable">
+                    <img data-image src="" alt="">
+                </div>
+                <div class="label_shortcoffeetable">
+                    <img data-label src="" alt="">
+                </div>
+        </article>
+    </template>
+
+
+
+
+
+    <!--<template id="temp_short_coffee_table">
         <article id="article_coffee_table" class="linktosingle">
             <div class="billede_coffee_table">
                 <img data-image src="" alt="">
                 <img class="logo" data-logo src="" alt="">
             </div>
         </article>
-    </template>
+    </template>-->
 
     <script>
+
+        //COFFEE TABLE
+        let jSonUrl = "http://gryfaberbay.dk/ikon/wordpress/wp-json/wp/v2/short_coffee_table";
+        let short_coffee_table = [];
+        let display = document.querySelector("#display");
+        let template = document.querySelector("#temp_shortcoffeetable");
+
+
+         document.addEventListener("DOMContentLoaded", hentJson);
+
+         async function hentJson() {
+            let dataJson = await fetch(jSonUrl);
+            short_coffee_tables = await dataJson.json();
+            //viser arrayet efter json er hentet ind
+            console.log(short_coffee_tables);
+            visShort_coffee_tables();
+        }
+
+
+         function visShort_coffee_tables() {
+            short_coffee_tables.forEach(short_coffee_table => {
+                let klon = template.cloneNode(true).content;
+                console.log(klon);
+                klon.querySelector("[data-image]").src = short_coffee_table.acf.billede.url;
+                klon.querySelector("[data-image]").alt = "billede af" + short_coffee_table.acf.billede.title;
+                klon.querySelector("[data-overskrift]").innerHTML = short_coffee_table.acf.overskrift;
+                klon.querySelector("[data-beskrivelse]").innerHTML = short_coffee_table.acf.beskrivelse_produkt;
+                klon.querySelector("[data-dimensioner]").innerHTML = short_coffee_table.acf.dimensioner;
+                klon.querySelector("[data-pris]").innerHTML = short_coffee_table.acf.pris;
+                klon.querySelector("[data-tags]").innerHTML = short_coffee_table.acf.tags;
+                 klon.querySelector("[data-label]").src = short_coffee_table.acf.label.url;
+                klon.querySelector("[data-label]").alt = "billede af" + short_coffee_table.acf.billede.title;
+
+
+                // appendChild betyder læg mere til. Resultere at flere emner lægger sig i bunden
+                display.appendChild(klon);
+            });
+        }
+
+
+
+
         //SHORT COFFEE TABLE
 
-        let jSonUrl = "http://gryfaberbay.dk/ikon/wordpress/wp-json/wp/v2/produkt?per_page=100";
+        /*let jSonUrl = "http://gryfaberbay.dk/ikon/wordpress/wp-json/wp/v2/short_coffee_table";
         let produkter = [];
         let display =
             document.querySelector("#display");
@@ -108,7 +176,7 @@
 
         function lavFiltrering() {
             produkter = produkter.filter(coffee_table =>
-                coffee_table.acf.tags[0]);
+                short_coffee_table.acf.tags[0]);
             lavKnapFiltrering();
         }
 
@@ -116,12 +184,12 @@
             console.log("hej" + produkter);
             if (filternavn_knap != "Alle") {
                 produkter = produkter.filter(coffee_table =>
-                    coffee_table.acf[filtertype_knap] == filternavn_knap);
+                    short_coffee_table.acf[filtertype_knap] == filternavn_knap);
             }
             visCoffeeTable();
         }
 
-        function visCoffeeTable() {
+        function visShortCoffeeTable() {
             console.log("hej hej");
             console.log(produkter);
             console.log(produkter.acf.tags[0]);
@@ -135,7 +203,7 @@
                 klon.querySelector("[data-image]").alt = "billede af" + table.acf.billede.title;
                 display.appendChild(klon);
             })
-        }
+        }*/
 
 
         // burgermenu
