@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LONG COFFEE TABLE</title>
+    <title>LONG CONSOLE TABLE</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -29,7 +29,6 @@
             </nav>
         </div>
     </header>
-
 
     <section id="display"></section>
 
@@ -60,68 +59,63 @@
             </a>
         </div>
     </footer>
-
-
-    <template id="temp_longcoffeetable">
-    <article id="article_longcoffeetable" data-inspiration>
-        <h1 data-overskrift></h1>
-        <p data-beskrivelse></p>
-        <p data-dimensioner></p>
-        <p data-pris></p>
-        <p data-tags></p>
-        <div class="billede_longcoffeetable">
-        <img data-image src="" alt="">
-            </div>
-            <div class="label_longcoffeetable">
-            <img data-label src="" alt="">
-            </div>
-
-
+    <template id="temp_produkt">
+            <article id="article_produkt" data-inspiration>
+                <h1 data-overskrift></h1>
+                <p data-beskrivelse></p>
+                <p data-dimensioner></p>
+                <p data-pris></p>
+                <p data-tags></p>
+                <div class="billede_produkt">
+                    <img data-image src="" alt="">
+                </div>
+                <div class="label_produkt">
+                    <img data-label src="" alt="">
+                </div>
         </article>
     </template>
 
-
     <script>
+        //produkt
 
-        //LONGCOFFEETABLE
-        let jSonUrl = "http://gryfaberbay.dk/ikon/wordpress/wp-json/wp/v2/long_coffee_table";
-        let long_coffee_table = [];
+        let jSonUrl = "http://gryfaberbay.dk/ikon/wordpress/wp-json/wp/v2/long_console_table/";
+        let produkter = [];
         let display = document.querySelector("#display");
-        let template = document.querySelector("#temp_longcoffeetable");
-
+        let template = document.querySelector("#temp_produkt");
 
         document.addEventListener("DOMContentLoaded", hentJson);
 
-         async function hentJson() {
+        async function hentJson() {
             let dataJson = await fetch(jSonUrl);
-            long_coffee_tables = await dataJson.json();
+            produkter = await dataJson.json();
             //viser arrayet efter json er hentet ind
-            console.log(long_coffee_tables);
-            visLong_coffee_tables();
+            console.log(produkter);
+            visProdukter();
         }
 
-           function visLong_coffee_tables() {
-            long_coffee_tables.forEach(long_coffee_table => {
+
+        function visProdukter() {
+            produkter.forEach(produkt => {
                 let klon = template.cloneNode(true).content;
                 console.log(klon);
-                klon.querySelector("[data-image]").src = long_coffee_table.acf.billede.url;
-                klon.querySelector("[data-image]").alt = "billede af" + long_coffee_table.acf.billede.title;
-                klon.querySelector("[data-overskrift]").innerHTML = long_coffee_table.acf.overskrift;
-                klon.querySelector("[data-beskrivelse]").innerHTML = long_coffee_table.acf.beskrivelse_produkt;
-                klon.querySelector("[data-dimensioner]").innerHTML = long_coffee_table.acf.dimensioner;
-                klon.querySelector("[data-pris]").innerHTML = long_coffee_table.acf.pris;
-                klon.querySelector("[data-tags]").innerHTML = long_coffee_table.acf.tags;
-                 klon.querySelector("[data-label]").src = long_coffee_table.acf.label.url;
-                klon.querySelector("[data-label]").alt = "billede af" + long_coffee_table.acf.billede.title;
+                klon.querySelector("[data-image]").src = produkt.acf.billede.url;
+                klon.querySelector("[data-image]").alt = "billede af" + produkt.acf.billede.title;
+                klon.querySelector("[data-overskrift]").innerHTML = produkt.acf.overskrift;
+                klon.querySelector("[data-beskrivelse]").innerHTML = produkt.acf.beskrivelse_produkt;
+                klon.querySelector("[data-dimensioner]").innerHTML = produkt.acf.dimensioner;
+                klon.querySelector("[data-pris]").innerHTML = produkt.acf.pris;
+                klon.querySelector("[data-tags]").innerHTML = produkt.acf.tags;
+                klon.querySelector("[data-label]").src = produkt.acf.label.url;
+                klon.querySelector("[data-label]").alt = "billede af" + produkt.acf.billede.title;
+                klon.querySelector("#article_produkt").addEventListener("click", () => {
+                    window.location.href = "long_console_table_single.html?id=" + produkt.id;
+                });
 
 
                 // appendChild betyder læg mere til. Resultere at flere emner lægger sig i bunden
                 display.appendChild(klon);
             });
         }
-
-
-
 
 
 
@@ -135,4 +129,5 @@
         document.querySelector("nav").addEventListener("click", toggleMenu);
     </script>
 </body>
+
 </html>
