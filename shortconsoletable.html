@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SHORT COFFEE TABLE</title>
+    <title>SHORT CONSOLE TABLE</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -31,7 +31,7 @@
         </div>
     </header>
 
-     <section id="display"></section>
+    <section id="display"></section>
 
 
     <!--<main>
@@ -73,69 +73,58 @@
         </div>
     </footer>
 
-    <template id="temp_shortcoffeetable">
-            <article id="article_shortcoffeetable" data-inspiration>
+    <template id="temp_console_table">
+            <article id="article_console_table" data-inspiration>
                 <h1 data-overskrift></h1>
                 <p data-beskrivelse></p>
                 <p data-dimensioner></p>
                 <p data-pris></p>
                 <p data-tags></p>
-                <div class="billede_shortcoffeetable">
+                <div class="billede_short_console_table">
                     <img data-image src="" alt="">
                 </div>
-                <div class="label_shortcoffeetable">
+                <div class="label_short_console_table">
                     <img data-label src="" alt="">
                 </div>
         </article>
     </template>
 
-
-
-
-
-    <!--<template id="temp_short_coffee_table">
-        <article id="article_coffee_table" class="linktosingle">
-            <div class="billede_coffee_table">
-                <img data-image src="" alt="">
-                <img class="logo" data-logo src="" alt="">
-            </div>
-        </article>
-    </template>-->
-
     <script>
-
-        //COFFEE TABLE
-        let jSonUrl = "http://gryfaberbay.dk/ikon/wordpress/wp-json/wp/v2/short_coffee_table";
-        let short_coffee_table = [];
+        //SHORT CONSOLE TABLE
+        let jSonUrl = "http://gryfaberbay.dk/ikon/wordpress/wp-json/wp/v2/short_console_table";
+        let short_console_table = [];
         let display = document.querySelector("#display");
-        let template = document.querySelector("#temp_shortcoffeetable");
+        let template = document.querySelector("#temp_console_table");
 
 
-         document.addEventListener("DOMContentLoaded", hentJson);
+        document.addEventListener("DOMContentLoaded", hentJson);
 
-         async function hentJson() {
+        async function hentJson() {
             let dataJson = await fetch(jSonUrl);
-            short_coffee_tables = await dataJson.json();
+            short_console_table = await dataJson.json();
             //viser arrayet efter json er hentet ind
-            console.log(short_coffee_tables);
-            visShort_coffee_tables();
+            console.log(short_console_tables);
+            visShort_console_tables();
         }
 
 
-         function visShort_coffee_tables() {
-            short_coffee_tables.forEach(short_coffee_table => {
+        function visShort_console_tables() {
+            //rydder modtageren #display
+            display.innerHTML = "";
+
+            //indsætter json-objekterne i templaten
+            short_console_table.forEach(table => {
                 let klon = template.cloneNode(true).content;
                 console.log(klon);
-                klon.querySelector("[data-image]").src = short_coffee_table.acf.billede.url;
-                klon.querySelector("[data-image]").alt = "billede af" + short_coffee_table.acf.billede.title;
-                klon.querySelector("[data-overskrift]").innerHTML = short_coffee_table.acf.overskrift;
-                klon.querySelector("[data-beskrivelse]").innerHTML = short_coffee_table.acf.beskrivelse_produkt;
-                klon.querySelector("[data-dimensioner]").innerHTML = short_coffee_table.acf.dimensioner;
-                klon.querySelector("[data-pris]").innerHTML = short_coffee_table.acf.pris;
-                klon.querySelector("[data-tags]").innerHTML = short_coffee_table.acf.tags;
-                 klon.querySelector("[data-label]").src = short_coffee_table.acf.label.url;
-                klon.querySelector("[data-label]").alt = "billede af" + short_coffee_table.acf.billede.title;
-
+                klon.querySelector("[data-image]").src = table.acf.billede.url;
+                klon.querySelector("[data-image]").alt = "billede af" + table.acf.billede.title;
+                klon.querySelector("[data-overskrift]").innerHTML = table.acf.overskrift;
+                klon.querySelector("[data-beskrivelse]").innerHTML = table.acf.beskrivelse_produkt;
+                klon.querySelector("[data-dimensioner]").innerHTML = table.acf.dimensioner;
+                klon.querySelector("[data-pris]").innerHTML = table.acf.pris;
+                klon.querySelector("[data-tags]").innerHTML = table.acf.tags;
+                klon.querySelector("[data-label]").src = table.acf.label.url;
+                klon.querySelector("[data-label]").alt = "billede af" + table.acf.billede.title;
 
                 // appendChild betyder læg mere til. Resultere at flere emner lægger sig i bunden
                 display.appendChild(klon);
@@ -152,7 +141,7 @@
         let display =
             document.querySelector("#display");
         let template =
-            document.querySelector("temp_coffee_table");
+            document.querySelector("temp_console_table");
         let filtertype_knap;
         let filternavn_knap = "Alle";
         let filtertype;
@@ -175,21 +164,35 @@
         }
 
         function lavFiltrering() {
+<<<<<<< HEAD:shortconsoletable.html
+            produkter = produkter.filter(console_table =>
+                console_table.acf.tags[0]);
+=======
             produkter = produkter.filter(coffee_table =>
                 short_coffee_table.acf.tags[0]);
+>>>>>>> origin/master:shortcoffeetable.html
             lavKnapFiltrering();
         }
 
         function lavKnapFiltrering() {
             console.log("hej" + produkter);
             if (filternavn_knap != "Alle") {
+<<<<<<< HEAD:shortconsoletable.html
+                produkter = produkter.filter(console_table =>
+                    console_table.acf[filtertype_knap] == filternavn_knap);
+=======
                 produkter = produkter.filter(coffee_table =>
                     short_coffee_table.acf[filtertype_knap] == filternavn_knap);
+>>>>>>> origin/master:shortcoffeetable.html
             }
-            visCoffeeTable();
+            visConsoleTable();
         }
 
+<<<<<<< HEAD:shortconsoletable.html
+        function visConsoleTable() {
+=======
         function visShortCoffeeTable() {
+>>>>>>> origin/master:shortcoffeetable.html
             console.log("hej hej");
             console.log(produkter);
             console.log(produkter.acf.tags[0]);
@@ -214,6 +217,7 @@
 
         document.querySelector(".burger").addEventListener("click", toggleMenu);
         document.querySelector("nav").addEventListener("click", toggleMenu);
+
     </script>
 </body>
 
