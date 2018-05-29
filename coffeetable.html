@@ -30,6 +30,25 @@
         </div>
     </header>
 
+    <section id="filtrering">
+        <button class="tags">rød</button>
+        <button class="tags">sort</button>
+        <button class="tags">hvid</button>
+        <button class="tags">creme</button>
+        <button class="tags">grå</button>
+        <button class="tags">orange</button>
+        <button class="tags">blomme</button>
+        <button class="tags">mørkeblå</button>
+        <button class="tags">gul</button>
+        <button class="tags">sølv blå</button>
+        <button class="tags">grøn</button>
+        <button class="tags">lyserød grøn</button>
+        <button class="tags">creme glitter</button>
+        <button class="tags">lyserød blå</button>
+        <button class="tags">støvet blå</button>
+
+    </section>
+
     <section id="display"></section>
 
     <footer>
@@ -85,16 +104,50 @@
 
         document.addEventListener("DOMContentLoaded", hentJson);
 
+        //FILTERKNAPPER
+        let filtertype;
+        let filternavn = "Alle";
+        let filterknapper = document.querySelectorAll("#filtrering button").forEach(knap => {
+            knap.addEventListener("click", (e) => {
+                filtertype = e.target.className;
+                filternavn = e.target.textContent;
+                console.log("nnnnnnn", filtertype, filternavn);
+                hentJson();
+            });
+        });
+
+        //NYHEDER
         async function hentJson() {
             let dataJson = await fetch(jSonUrl);
             produkter = await dataJson.json();
-            //viser arrayet efter json er hentet ind
-            console.log(produkter);
+            lavFiltrering();
+        }
+
+        //FILTRERING
+        function lavFiltrering() { // filtertypen indeholder tagsene, som viser sig at være en array! Derfor laver vi følgende if-sætning:
+
+            if (filternavn != "Alle") {
+                let arrr = [];
+                produkter.forEach(produkt => {
+                    produkt.acf.tags.forEach(t => {
+                        if (t == filternavn) {
+                            arrr.push(produkt);
+                            console.log(arrr);
+                        }
+                    });
+                });
+                produkter = arrr;
+                console.log("efter", produkter);
+            }
             visProdukter();
         }
 
 
+
+
         function visProdukter() {
+            display.innerHTML = "";
+
             produkter.forEach(produkt => {
                 let klon = template.cloneNode(true).content;
                 console.log(klon);
