@@ -30,6 +30,7 @@
         </div>
     </header>
 
+    <!-- filtreringstag -->
     <section id="filtrering">
         <button class="tags">rød</button>
         <button class="tags">sort</button>
@@ -46,7 +47,6 @@
         <button class="tags">creme glitter</button>
         <button class="tags">lyserød blå</button>
         <button class="tags">støvet blå</button>
-
     </section>
 
     <section id="display"></section>
@@ -95,8 +95,7 @@
     </template>
 
     <script>
-        //produkt
-
+        //PRODUKT
         let jSonUrl = "http://gryfaberbay.dk/ikon/wordpress/wp-json/wp/v2/coffee_table/";
         let produkter = [];
         let display = document.querySelector("#display");
@@ -116,7 +115,7 @@
             });
         });
 
-        //NYHEDER
+        //ARRAY'ET HENTES IND
         async function hentJson() {
             let dataJson = await fetch(jSonUrl);
             produkter = await dataJson.json();
@@ -126,26 +125,31 @@
         //FILTRERING
         function lavFiltrering() { // filtertypen indeholder tagsene, som viser sig at være en array! Derfor laver vi følgende if-sætning:
 
+            //hvis filternavnet ikke er lig med alle, sker følgende:
             if (filternavn != "Alle") {
-                let arrr = [];
+                //vi laver lokal variabel som er et tomt array
+                let filtrerede_produkter = [];
+                //vi laver forEach funktion for vores produkter-array
                 produkter.forEach(produkt => {
+                    //da filternavnet er textContent, skal det stemme overens med produktets tag i acf
                     produkt.acf.tags.forEach(t => {
                         if (t == filternavn) {
-                            arrr.push(produkt);
-                            console.log(arrr);
+                            //de produkter hvis tag stemmer overens med filternavnet pushes til det tomme array (filtrerede produkter)
+                            filtrerede_produkter.push(produkt);
+                            console.log(filtrerede_produkter);
                         }
                     });
                 });
-                produkter = arrr;
+                //de filtrerede produkter indsættes i vores oprindelige array
+                produkter = filtrerede_produkter;
                 console.log("efter", produkter);
             }
             visProdukter();
         }
 
-
-
-
         function visProdukter() {
+
+            //rydder modtageren #display
             display.innerHTML = "";
 
             produkter.forEach(produkt => {
