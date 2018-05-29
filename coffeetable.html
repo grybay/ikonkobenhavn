@@ -31,21 +31,23 @@
     </header>
 
     <section id="filtrering">
-        <button class="rød">Rød</button>
-        <button class="sort">Sort</button>
-        <button class="hvid">Hvid</button>
+        <button class="tags">Rød</button>
+        <button class="tags">Sort</button>
+        <button class="tags">Hvid</button>
+        <!--
         <button class="creme">Creme</button>
-        <button class="grå">Grå</button>
+        <button class="graa">Grå</button>
         <button class="orange">Orange</button>
         <button class="blomme">Blomme</button>
-        <button class="mørkeblå">Mørkeblå</button>
-        <button class="gul">Gul</button>
-        <button class="sølv_blå">Sølv Blå</button>
-        <button class="grøn">Grøn</button>
-        <button class="lyserød_grøn">Lyserød Grøn</button>
-        <button class="creme_glitter">Creme Glitter</button>
-        <button class="lyserød_blå">Lyserød Blå</button>
-        <button class="støvet_blå">Støvet Blå</button>
+        <button class="moerkeblaa">Mørkeblå</button>
+        <button class="tags">Gul</button>
+        <button class="soelvblaa">Sølv Blå</button>
+        <button class="groen">Grøn</button>
+        <button class="lyseroedgroen">Lyserød Grøn</button>
+        <button class="cremeglitter">Creme Glitter</button>
+        <button class="lyseroedblaa">Lyserød Blå</button>
+        <button class="stoevetblaa">Støvet Blå</button>
+-->
     </section>
 
 
@@ -110,24 +112,56 @@
 
          document.addEventListener("DOMContentLoaded", hentJson);
 
+        let filterknapper = document.querySelectorAll("#filtrering button").forEach(knap => {
+            knap.addEventListener("click", (e) => {
+                filtertype = e.target.className;
+                filternavn = e.target.textContent;
+                console.log("filterknapper", filtertype, filternavn);
+            });
+        });
+
+
+
          async function hentJson() {
             let dataJson = await fetch(jSonUrl);
             coffee_tables = await dataJson.json();
             //viser arrayet efter json er hentet ind
-            console.log(coffee_tables);
+            console.log("coffee_tables", coffee_tables);
             //visCoffee_tables();
              lavFiltrering();
 
         }
 
-        function lavFiltrering () {
+
+
+        function lavFiltrering() {
             /*document.querySelector("#overskrift").textContent = filternavn;*/
             if (filternavn != "Alle") {
-                coffee_table = coffee_table.filter(obs => obs.acf[filtertype] == filternavn);
-                console.log("lav filtrering");
+            let arrr = [];
+                console.log(arrr);
+                coffee_tables.forEach(coffee_table => {
+                console.log(coffee_table);
+                    coffee_table.acf[filtertype].forEach(t => {
+
+                console.log("coffee_table.acf", coffee_table.acf[filtertype]);
+                        if (t == filternavn) {
+                            arrr.push(coffee_table);
+                            console.log(arrr);
+                        }
+                    });
+                });
+                coffee_table = arrr;
+                console.log("efter");
+
             }
             visCoffee_tables();
         }
+
+
+
+
+
+
          function visCoffee_tables()  {
              console.log("visCoffee_tables");
             coffee_tables.forEach(coffee_table => {
@@ -141,8 +175,8 @@
                 klon.querySelector("[data-dimensioner]").innerHTML = coffee_table.acf.dimensioner;
                 klon.querySelector("[data-pris]").innerHTML = coffee_table.acf.pris;
                 klon.querySelector("[data-tags]").innerHTML = coffee_table.acf.tags;
-                 klon.querySelector("[data-label]").src = coffee_table.acf.label.url;
-                klon.querySelector("[data-label]").alt = "billede af" + coffee_table.acf.billede.title;
+                // klon.querySelector("[data-label]").src = coffee_table.acf.label.url;
+                //klon.querySelector("[data-label]").alt = "billede af" + coffee_table.acf.billede.title;
 
                 });
 
@@ -151,20 +185,6 @@
                 display.appendChild(klon);
             });
         }
-
-
-
-        let filterknapper = document.querySelectorAll("#filtrering button").forEach(knap => {
-            knap.addEventListener("click", (e) => {
-                filtertype = e.target.className;
-                filternavn = e.target.textContent;
-                hentJson();
-                console.log("filterknapper", filtertype, filternavn);
-            });
-        });
-
-
-
 
 
 
