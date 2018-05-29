@@ -30,7 +30,20 @@
         </div>
     </header>
 
-    <section id="display"></section>
+    <section id="display">
+        <article id="article_produkt" data-produkt>
+            <div class="label_produkt">
+                <img data-label src="" alt="">
+            </div>
+            <div class="billede_produkt">
+                <img data-image src="" alt="">
+            </div>
+            <h1 data-overskrift></h1>
+            <p data-beskrivelse></p>
+            <p data-dimensioner></p>
+            <p data-pris></p>
+        </article>
+    </section>
 
     <footer>
         <div id="adresse_footer">
@@ -59,57 +72,46 @@
             </a>
         </div>
     </footer>
-    <template id="temp_cube">
-            <article id="article_cube" data-produkt>
-               <div class="label_cube">
-                    <img data-label src="" alt="">
-                </div>
-                <div class="billede_cube">
-                    <img data-image src="" alt="">
-                </div>
-                <h1 data-overskrift></h1>
-                <p data-beskrivelse></p>
-                <p data-dimensioner></p>
-                <p data-pris></p>
-        </article>
-    </template>
+
 
     <script>
         //CUBE SINGLE
 
-        let jSonUrl = "http://gryfaberbay.dk/ikon/wordpress/wp-json/wp/v2/cube";
+        let url = new URL(window.location.href);
+        let searchParams = new URLSearchParams(url.search);
+        let id = searchParams.get("id");
+        let apiURL = "http://gryfaberbay.dk/ikon/wordpress/wp-json/wp/v2/cube/" + id;
+        let produkt = {};
+        console.log(id);
+
+        /* let jSonUrl = "http://gryfaberbay.dk/ikon/wordpress/wp-json/wp/v2/cube";
         let cube = [];
         let display = document.querySelector("#display");
-        let template = document.querySelector("#temp_cube");
+        let template = document.querySelector("#temp_produkt");
+        */
+
 
         document.addEventListener("DOMContentLoaded", hentJson);
 
         async function hentJson() {
-            let dataJson = await fetch(jSonUrl);
-            cubes = await dataJson.json();
+            let dataJson = await fetch(apiURL);
+            produkt = await dataJson.json();
             //viser arrayet efter json er hentet ind
-            console.log(cubes);
-            visCubes();
+            console.log(produkt);
+            visProdukt();
         }
 
 
-        function visCubes() {
-            cubes.forEach(cube => {
-                let klon = template.cloneNode(true).content;
-                console.log(klon);
-                klon.querySelector("[data-image]").src = cube.acf.billede.url;
-                klon.querySelector("[data-image]").alt = "billede af" + cube.acf.billede.title;
-                klon.querySelector("[data-overskrift]").innerHTML = cube.acf.overskrift;
-                klon.querySelector("[data-beskrivelse]").innerHTML = cube.acf.beskrivelse_produkt;
-                klon.querySelector("[data-dimensioner]").innerHTML = cube.acf.dimensioner;
-                klon.querySelector("[data-pris]").innerHTML = cube.acf.pris;
-                klon.querySelector("[data-label]").src = cube.acf.label.url;
-                klon.querySelector("[data-label]").alt = "billede af" + cube.acf.billede.title;
+        function visProdukt() {
+            document.querySelector("[data-image]").src = produkt.acf.billede.url;
+            document.querySelector("[data-image]").alt = "billede af" + produkt.acf.billede.title;
+            document.querySelector("[data-overskrift]").innerHTML = produkt.acf.overskrift;
+            document.querySelector("[data-beskrivelse]").innerHTML = produkt.acf.beskrivelse_produkt;
+            document.querySelector("[data-dimensioner]").innerHTML = produkt.acf.dimensioner;
+            document.querySelector("[data-pris]").innerHTML = produkt.acf.pris;
+            document.querySelector("[data-label]").src = produkt.acf.label.url;
+            document.querySelector("[data-label]").alt = "billede af" + produkt.acf.billede.title;
 
-
-                // appendChild betyder læg mere til. Resultere at flere emner lægger sig i bunden
-                display.appendChild(klon);
-            });
         }
 
 
@@ -122,6 +124,7 @@
 
         document.querySelector(".burger").addEventListener("click", toggleMenu);
         document.querySelector("nav").addEventListener("click", toggleMenu);
+
     </script>
 </body>
 
