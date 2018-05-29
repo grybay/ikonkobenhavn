@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CUBE</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <div class="menu">
+            <button class="burger">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </button>
+            <nav>
+                <div id="menu_open">
+                    <a href="index.html" id="home_logo">
+                        <img src="filer/ikon_logo.svg" alt="logo">
+                    </a>
+                    <a href="shopkategori.html" id="nav_shop">Shop</a>
+                    <a href="journal.html" id="nav_journal">Journal</a>
+                    <a href="om.html" id="nav_om">Om</a>
+                    <a href="kontakt.html" id="nav_kontakt">Kontakt</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section id="display"></section>
+
+    <footer>
+        <div id="adresse_footer">
+            <p>IKON KØBENHAVN APS<br> NØRRE VOLDGADE 42 KLD.<br> KØBENHAVN K, 1358</p>
+        </div>
+        <div id="cvrnummer_footer">
+            <p>21254746</p>
+        </div>
+        <div id="gavekort_footer">
+            <a href="gavekort.html"></a>
+            <p>GAVEKORT</p>
+        </div>
+        <div id="forsendelseogretur_footer">
+            <a href="forsendelseogretur.html">
+                <p>FORSENDELSE OG RETUR</p>
+            </a>
+        </div>
+        <div id="privatpolitik_footer">
+            <a href="privatpolitik.html">
+                <p>PRIVAT POLITIK</p>
+            </a>
+        </div>
+        <div id="reglerogvilkaar_footer">
+            <a href="reglerogvilkaar.html">
+                <p>REGLER OG VILKÅR</p>
+            </a>
+        </div>
+    </footer>
+    <template id="temp_cube">
+            <article id="article_cube" data-produkt>
+               <div class="label_cube">
+                    <img data-label src="" alt="">
+                </div>
+                <div class="billede_cube">
+                    <img data-image src="" alt="">
+                </div>
+                <h1 data-overskrift></h1>
+                <p data-beskrivelse></p>
+                <p data-dimensioner></p>
+                <p data-pris></p>
+        </article>
+    </template>
+
+    <script>
+        //CUBE SINGLE
+
+        let jSonUrl = "http://gryfaberbay.dk/ikon/wordpress/wp-json/wp/v2/cube";
+        let cube = [];
+        let display = document.querySelector("#display");
+        let template = document.querySelector("#temp_cube");
+
+        document.addEventListener("DOMContentLoaded", hentJson);
+
+        async function hentJson() {
+            let dataJson = await fetch(jSonUrl);
+            cubes = await dataJson.json();
+            //viser arrayet efter json er hentet ind
+            console.log(cubes);
+            visCubes();
+        }
+
+
+        function visCubes() {
+            cubes.forEach(cube => {
+                let klon = template.cloneNode(true).content;
+                console.log(klon);
+                klon.querySelector("[data-image]").src = cube.acf.billede.url;
+                klon.querySelector("[data-image]").alt = "billede af" + cube.acf.billede.title;
+                klon.querySelector("[data-overskrift]").innerHTML = cube.acf.overskrift;
+                klon.querySelector("[data-beskrivelse]").innerHTML = cube.acf.beskrivelse_produkt;
+                klon.querySelector("[data-dimensioner]").innerHTML = cube.acf.dimensioner;
+                klon.querySelector("[data-pris]").innerHTML = cube.acf.pris;
+                klon.querySelector("[data-label]").src = cube.acf.label.url;
+                klon.querySelector("[data-label]").alt = "billede af" + cube.acf.billede.title;
+
+
+                // appendChild betyder læg mere til. Resultere at flere emner lægger sig i bunden
+                display.appendChild(klon);
+            });
+        }
+
+
+
+        // burgermenu
+        function toggleMenu() {
+            document.querySelector(".burger").classList.toggle("change");
+            document.querySelector("nav").classList.toggle("show");
+        }
+
+        document.querySelector(".burger").addEventListener("click", toggleMenu);
+        document.querySelector("nav").addEventListener("click", toggleMenu);
+    </script>
+</body>
+
+</html>
