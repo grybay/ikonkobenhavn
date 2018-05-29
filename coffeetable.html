@@ -34,20 +34,19 @@
         <button class="tags">Rød</button>
         <button class="tags">Sort</button>
         <button class="tags">Hvid</button>
-        <!--
-        <button class="creme">Creme</button>
-        <button class="graa">Grå</button>
-        <button class="orange">Orange</button>
-        <button class="blomme">Blomme</button>
-        <button class="moerkeblaa">Mørkeblå</button>
+        <button class="tags">Creme</button>
+        <button class="tags">Grå</button>
+        <button class="tags">Orange</button>
+        <button class="tags">Blomme</button>
+        <button class="tags">Mørkeblå</button>
         <button class="tags">Gul</button>
-        <button class="soelvblaa">Sølv Blå</button>
-        <button class="groen">Grøn</button>
-        <button class="lyseroedgroen">Lyserød Grøn</button>
-        <button class="cremeglitter">Creme Glitter</button>
-        <button class="lyseroedblaa">Lyserød Blå</button>
-        <button class="stoevetblaa">Støvet Blå</button>
--->
+        <button class="tags">Sølv Blå</button>
+        <button class="tags">Grøn</button>
+        <button class="tags">Lyserød Grøn</button>
+        <button class="tags">Creme Glitter</button>
+        <button class="tags">Lyserød Blå</button>
+        <button class="tags">Støvet Blå</button>
+
     </section>
 
 
@@ -109,20 +108,18 @@
         //FILTRERING
         let filtertype;
         let filternavn = "Alle";
-
-         document.addEventListener("DOMContentLoaded", hentJson);
-
         let filterknapper = document.querySelectorAll("#filtrering button").forEach(knap => {
             knap.addEventListener("click", (e) => {
                 filtertype = e.target.className;
                 filternavn = e.target.textContent;
                 console.log("filterknapper", filtertype, filternavn);
+                hentJson();
             });
         });
 
+        document.addEventListener("DOMContentLoaded", hentJson);
 
-
-         async function hentJson() {
+        async function hentJson() {
             let dataJson = await fetch(jSonUrl);
             coffee_tables = await dataJson.json();
             //viser arrayet efter json er hentet ind
@@ -133,31 +130,24 @@
         }
 
 
-
         function lavFiltrering() {
             /*document.querySelector("#overskrift").textContent = filternavn;*/
             if (filternavn != "Alle") {
             let arrr = [];
-                console.log(arrr);
                 coffee_tables.forEach(coffee_table => {
-                console.log(coffee_table);
                     coffee_table.acf[filtertype].forEach(t => {
-
-                console.log("coffee_table.acf", coffee_table.acf[filtertype]);
                         if (t == filternavn) {
                             arrr.push(coffee_table);
                             console.log(arrr);
                         }
                     });
                 });
-                coffee_table = arrr;
-                console.log("efter");
+                coffee_tables = arrr;
+                console.log("efter", coffee_tables);
 
             }
             visCoffee_tables();
         }
-
-
 
 
 
