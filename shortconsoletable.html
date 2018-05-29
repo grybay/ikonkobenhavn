@@ -30,6 +30,25 @@
         </div>
     </header>
 
+    <!-- filtreringstag -->
+    <section id="filtrering">
+        <button class="tags">rød</button>
+        <button class="tags">sort</button>
+        <button class="tags">hvid</button>
+        <button class="tags">creme</button>
+        <button class="tags">grå</button>
+        <button class="tags">orange</button>
+        <button class="tags">blomme</button>
+        <button class="tags">mørkeblå</button>
+        <button class="tags">gul</button>
+        <button class="tags">sølv blå</button>
+        <button class="tags">grøn</button>
+        <button class="tags">lyserød grøn</button>
+        <button class="tags">creme glitter</button>
+        <button class="tags">lyserød blå</button>
+        <button class="tags">støvet blå</button>
+    </section>
+
     <section id="display"></section>
 
     <footer>
@@ -65,7 +84,6 @@
                 <p data-beskrivelse></p>
                 <p data-dimensioner></p>
                 <p data-pris></p>
-                <p data-tags></p>
                 <div class="billede_produkt">
                     <img data-image src="" alt="">
                 </div>
@@ -76,8 +94,7 @@
     </template>
 
     <script>
-        //produkt
-
+        //PRODUKT
         let jSonUrl = "http://gryfaberbay.dk/ikon/wordpress/wp-json/wp/v2/short_console_table/";
         let produkter = [];
         let display = document.querySelector("#display");
@@ -85,16 +102,53 @@
 
         document.addEventListener("DOMContentLoaded", hentJson);
 
+        //FILTERKNAPPER
+        let filtertype;
+        let filternavn = "Alle";
+        let filterknapper = document.querySelectorAll("#filtrering button").forEach(knap => {
+            knap.addEventListener("click", (e) => {
+                filtertype = e.target.className;
+                filternavn = e.target.textContent;
+                hentJson();
+            });
+        });
+
+        //ARRAY'ET HENTES IND
         async function hentJson() {
             let dataJson = await fetch(jSonUrl);
             produkter = await dataJson.json();
-            //viser arrayet efter json er hentet ind
-            console.log(produkter);
+            lavFiltrering();
+        }
+
+        //FILTRERING
+        function lavFiltrering() { // filtertypen indeholder tagsene, som viser sig at være en array! Derfor laver vi følgende if-sætning:
+
+            //hvis filternavnet ikke er lig med alle, sker følgende:
+            if (filternavn != "Alle") {
+                //vi laver lokal variabel som er et tomt array
+                let filtrerede_produkter = [];
+                //vi laver forEach funktion for vores produkter-array
+                produkter.forEach(produkt => {
+                    //da filternavnet er textContent, skal det stemme overens med produktets tag i acf
+                    produkt.acf.tags.forEach(t => {
+                        if (t == filternavn) {
+                            //de produkter hvis tag stemmer overens med filternavnet pushes til det tomme array (filtrerede produkter)
+                            filtrerede_produkter.push(produkt);
+                            console.log(filtrerede_produkter);
+                        }
+                    });
+                });
+                //de filtrerede produkter indsættes i vores oprindelige array
+                produkter = filtrerede_produkter;
+            }
             visProdukter();
         }
 
-
         function visProdukter() {
+
+            //rydder modtageren #display
+            display.innerHTML = "";
+
             produkter.forEach(produkt => {
                 let klon = template.cloneNode(true).content;
                 console.log(klon);
@@ -104,7 +158,6 @@
                 klon.querySelector("[data-beskrivelse]").innerHTML = produkt.acf.beskrivelse_produkt;
                 klon.querySelector("[data-dimensioner]").innerHTML = produkt.acf.dimensioner;
                 klon.querySelector("[data-pris]").innerHTML = produkt.acf.pris;
-                klon.querySelector("[data-tags]").innerHTML = produkt.acf.tags;
                 klon.querySelector("[data-label]").src = produkt.acf.label.url;
                 klon.querySelector("[data-label]").alt = "billede af" + produkt.acf.billede.title;
                 klon.querySelector("#article_produkt").addEventListener("click", () => {
@@ -118,7 +171,6 @@
         }
 
 
-
         // burgermenu
         function toggleMenu() {
             document.querySelector(".burger").classList.toggle("change");
@@ -127,81 +179,6 @@
 
         document.querySelector(".burger").addEventListener("click", toggleMenu);
         document.querySelector("nav").addEventListener("click", toggleMenu);
-
-        //SHORT COFFEE TABLE
-
-        /*let jSonUrl = "http://gryfaberbay.dk/ikon/wordpress/wp-json/wp/v2/short_coffee_table";
-        let produkter = [];
-        let display =
-            document.querySelector("#display");
-        let template =
-            document.querySelector("temp_console_table");
-        let filtertype_knap;
-        let filternavn_knap = "Alle";
-        let filtertype;
-        let filternavn = "Alle";
-        let filterknapper_ = document.querySelectorAll("#filter button").forEach(knap => {
-            knap.addEventListener("click", (e) => {
-                filtertype_knap = e.target.className;
-                filternavn_knap = e.target.textContent;
-                hentJson();
-            });
-        });
-
-        document.addEventListener("DOMContentLoaded", hentJson);
-
-        async function hentJson() {
-            let dataJson = await fetch(jSonUrl);
-            produkter = await dataJson.json();
-            lavFiltrering();
-            console.log("hej" + produkter);
-        }
-
-        function lavFiltrering() {
-<<<<<<< HEAD:shortconsoletable.html
-            produkter = produkter.filter(console_table =>
-                console_table.acf.tags[0]);
-=======
-            produkter = produkter.filter(coffee_table =>
-                short_coffee_table.acf.tags[0]);
->>>>>>> origin/master:shortcoffeetable.html
-            lavKnapFiltrering();
-        }
-
-        function lavKnapFiltrering() {
-            console.log("hej" + produkter);
-            if (filternavn_knap != "Alle") {
-<<<<<<< HEAD:shortconsoletable.html
-                produkter = produkter.filter(console_table =>
-                    console_table.acf[filtertype_knap] == filternavn_knap);
-=======
-                produkter = produkter.filter(coffee_table =>
-                    short_coffee_table.acf[filtertype_knap] == filternavn_knap);
->>>>>>> origin/master:shortcoffeetable.html
-            }
-            visConsoleTable();
-        }
-
-<<<<<<< HEAD:shortconsoletable.html
-        function visConsoleTable() {
-=======
-        function visShortCoffeeTable() {
->>>>>>> origin/master:shortcoffeetable.html
-            console.log("hej hej");
-            console.log(produkter);
-            console.log(produkter.acf.tags[0]);
-
-            display.innerHTML = "";
-
-            produkter.forEach(table => {
-
-                let klon = template.cloneNode(true).content;
-                klon.querySelector("[data-image]").src = table.acf.billede.url;
-                klon.querySelector("[data-image]").alt = "billede af" + table.acf.billede.title;
-                display.appendChild(klon);
-            })
-        }*/
-
     </script>
 </body>
 
