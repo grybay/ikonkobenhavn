@@ -117,15 +117,21 @@
 
         function openModal() {
             let my_id = this.getAttribute("data-id");
-            let modal = inspirationer.find(inspiration => {
-                if (my_id == inspiration.id) {
-                    document.querySelector(".popup").style.visibility = "visible";
-                    document.querySelector("[data-header]").textContent = inspiration.title.rendered;
-                    document.querySelector("[data-beskrivelse]").innerHTML = inspiration.acf.tekst;
-                    document.querySelector("[data-image]").src = inspiration.acf.billede.url;
-                    document.querySelector("[data-image]").alt = "billede af" + inspiration.acf.billede.title;
+            inspirationer.find(inspi => {
+                if (my_id == inspi.id) {
+                    document.querySelector("#popup").style.visibility = "visible";
+                    document.querySelector("[data-header]").textContent = inspi.title.rendered;
+                    document.querySelector("[data-beskrivelse]").innerHTML = inspi.acf.tekst;
+                    document.querySelector("[data-image]").src = inspi.acf.billede.url;
+                    document.querySelector("[data-image]").alt = "billede af" + inspi.acf.billede.title;
+                    document.querySelector("#popup button").addEventListener("click", closeModal);
                 }
             })
+        }
+
+        function closeModal() {
+            document.querySelector("#popup").style.visibility = "hidden";
+
         }
 
         // burgermenu
@@ -136,7 +142,6 @@
 
         document.querySelector(".burger").addEventListener("click", toggleMenu);
         document.querySelector("nav").addEventListener("click", toggleMenu);
-
     </script>
 </body>
 
