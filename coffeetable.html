@@ -84,7 +84,6 @@
                 <p data-beskrivelse></p>
                 <p data-dimensioner></p>
                 <p data-pris></p>
-                <p data-tags></p>
                 <div class="billede_produkt">
                     <img data-image src="" alt="">
                 </div>
@@ -110,7 +109,6 @@
             knap.addEventListener("click", (e) => {
                 filtertype = e.target.className;
                 filternavn = e.target.textContent;
-                console.log("nnnnnnn", filtertype, filternavn);
                 hentJson();
             });
         });
@@ -142,7 +140,6 @@
                 });
                 //de filtrerede produkter indsættes i vores oprindelige array
                 produkter = filtrerede_produkter;
-                console.log("efter", produkter);
             }
             visProdukter();
         }
@@ -161,7 +158,6 @@
                 klon.querySelector("[data-beskrivelse]").innerHTML = produkt.acf.beskrivelse_produkt;
                 klon.querySelector("[data-dimensioner]").innerHTML = produkt.acf.dimensioner;
                 klon.querySelector("[data-pris]").innerHTML = produkt.acf.pris;
-                klon.querySelector("[data-tags]").innerHTML = produkt.acf.tags;
                 klon.querySelector("[data-label]").src = produkt.acf.label.url;
                 klon.querySelector("[data-label]").alt = "billede af" + produkt.acf.billede.title;
                 klon.querySelector("#article_produkt").addEventListener("click", () => {
