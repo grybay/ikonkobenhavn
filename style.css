@@ -136,6 +136,7 @@ body {
     overflow: scroll;
 }
 
+<<<<<<< HEAD
 /* ----- FOOTER ----- */
 
 footer {
@@ -170,12 +171,14 @@ footer {
     grid-row: 1 / 2;
 }
 
+=======
+>>>>>>> origin/master
 /*------ SHOP KATEGORI ------*/
 
 .cube img,
 .coffeetable img,
 .shortcoffeetable img,
-.longcoffeetable img {
+.longconsoletable img {
     height: auto;
     width: 40%;
 }
@@ -183,27 +186,10 @@ footer {
 .cube,
 .coffeetable,
 .shortcoffeetable,
-.longcoffeetable {
+.longconsoletable {
     padding-top: 100px;
     text-align: center;
 
-}
-
-
-
-/*----------JOURNAL ------*/
-
-#vaelg_events {
-
-    margin: 4em;
-    padding: 5em;
-}
-
-
-#vaelg_inspiration {
-
-    margin: 4em;
-    padding: 5em;
 }
 
 
@@ -214,4 +200,8 @@ footer {
 
 /*------- DESKTOP -------*/
 
-@media screen and (min-width:1024px) {}
+@media screen and (min-width:1024px) {
+    #videoen {
+        border-radius: 100px;
+    }
+}
