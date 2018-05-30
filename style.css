@@ -12,8 +12,14 @@ body {
 
 a {
     text-decoration: none;
-    color: gray;
+    color: #818181;
+    font-size: 80%;
 
+
+}
+
+h2 {
+    font-size:
 }
 
 @media screen and (max-width:767px) {
@@ -305,6 +311,17 @@ a {
         grid-template-rows: 1fr 1fr;
     }
 
+    .motion_graphic_mine_oplysninger {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        border-radius: 100px;
+        height: 80px;
+        width: 80px;
+        display: grid;
+        justify-self: center;
+    }
+
+
     .mine_oplysninger img {
         grid-column: 1 / 2;
         grid-row: 1 / 2;
@@ -362,6 +379,16 @@ a {
         grid-template-rows: 1fr 1fr;
     }
 
+    .motion_graphic_godkendt {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        border-radius: 100px;
+        height: 80px;
+        width: 80px;
+        display: grid;
+        justify-self: center;
+    }
+
     .godkendt img {
         grid-column: 1 / 2;
         grid-row: 1 / 2;
@@ -383,6 +410,16 @@ a {
         align-items: center;
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 1fr;
+    }
+
+    .motion_graphic_ordrebekraeftelse {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        border-radius: 100px;
+        height: 80px;
+        width: 80px;
+        display: grid;
+        justify-self: center;
     }
 
     .ordrebekraeftelse img {
