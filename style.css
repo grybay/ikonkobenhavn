@@ -147,10 +147,14 @@ footer {
     padding: 5vh 10vw;
 }
 
-#sociale_medier img {
-    height: auto;
-    width: 40%;
+.facebook img,
+.instagram img {
+    height: 100%;
+    width: 100%;
+    justify-self: center;
+
 }
+
 
 #sociale_medier {
     grid-column: 2 / 4;
@@ -164,41 +168,72 @@ footer {
 .facebook {
     grid-column: 1 / 2;
     grid-row: 1 / 2;
+    width: 10vw;
+    height: 10vw;
+    justify-self: center;
+
+
 }
 
 .instagram {
     grid-column: 2 / 3;
     grid-row: 1 / 2;
+    width: 10vw;
+    height: 10vw;
+    justify-self: center;
 }
 
 #adresse_footer {
     grid-column: 4 / 5;
     grid-row: 1 / 4;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+.virksomhed {
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+}
+
+.gade {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+}
+
+.postnummer {
+    grid-row: 3 / 4;
+    grid-column: 1 / 2;
 }
 
 #cvrnummer_footer {
     grid-column: 4 / 5;
     grid-row: 4 / 5;
+    align-self: end;
 }
 
 #privatpolitik_footer {
     grid-column: 1 / 2;
     grid-row: 2 / 3;
+    align-self: center;
 }
 
 #gavekort_footer {
     grid-column: 1 / 2;
     grid-row: 1 / 2;
+    align-self: start;
 }
 
 #forsendelseogretur_footer {
     grid-column: 1 / 2;
     grid-row: 3 / 4;
+    align-self: center;
 }
 
 #reglerogvilkaar_footer {
     grid-column: 1 / 2;
     grid-row: 4 / 5;
+    align-self: end;
 }
 
 /*------ SHOP KATEGORI ------*/
