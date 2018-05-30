@@ -297,6 +297,17 @@ body {
         grid-template-rows: 1fr 1fr;
     }
 
+    .motion_graphic_mine_oplysninger {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        border-radius: 100px;
+        height: 80px;
+        width: 80px;
+        display: grid;
+        justify-self: center;
+    }
+
+
     .mine_oplysninger img {
         grid-column: 1 / 2;
         grid-row: 1 / 2;
@@ -354,6 +365,16 @@ body {
         grid-template-rows: 1fr 1fr;
     }
 
+    .motion_graphic_godkendt {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        border-radius: 100px;
+        height: 80px;
+        width: 80px;
+        display: grid;
+        justify-self: center;
+    }
+
     .godkendt img {
         grid-column: 1 / 2;
         grid-row: 1 / 2;
@@ -375,6 +396,16 @@ body {
         align-items: center;
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 1fr;
+    }
+
+    .motion_graphic_ordrebekraeftelse {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        border-radius: 100px;
+        height: 80px;
+        width: 80px;
+        display: grid;
+        justify-self: center;
     }
 
     .ordrebekraeftelse img {
