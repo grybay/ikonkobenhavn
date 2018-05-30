@@ -30,8 +30,8 @@
         </div>
     </header>
 
-    <video controls width="200" height="200">
-            <source src="filer/betaling.mov" type="video/mov">
+    <video id="videoen" width="200" height="200" autoplay>
+            <source src="filer/ordrebekraeftelse.mp4" type="video/mp4">
         </video>
 
 
@@ -64,6 +64,16 @@
     </footer>
 
     <script>
+        // når siden er loadet: startHistorien
+        $(window).on("load", startVideo);
+
+
+        function startVideo() {
+            console.log("Videoen starter");
+            // Afspil videoen
+            $("#videoen")[1].play();
+        }
+
         // burgermenu
         function toggleMenu() {
             document.querySelector(".burger").classList.toggle("change");
