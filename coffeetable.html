@@ -79,8 +79,6 @@
     <template id="temp_produkt">
             <article id="article_produkt" data-inspiration>
                 <h1 data-overskrift></h1>
-                <p data-beskrivelse></p>
-                <p data-dimensioner></p>
                 <p data-pris></p>
                 <div class="billede_produkt">
                     <img data-image src="" alt="">
@@ -153,15 +151,12 @@
                 klon.querySelector("[data-image]").src = produkt.acf.billede.url;
                 klon.querySelector("[data-image]").alt = "billede af" + produkt.acf.billede.title;
                 klon.querySelector("[data-overskrift]").innerHTML = produkt.acf.overskrift;
-                klon.querySelector("[data-beskrivelse]").innerHTML = produkt.acf.beskrivelse_produkt;
-                klon.querySelector("[data-dimensioner]").innerHTML = produkt.acf.dimensioner;
                 klon.querySelector("[data-pris]").innerHTML = produkt.acf.pris;
                 klon.querySelector("[data-label]").src = produkt.acf.label.url;
                 klon.querySelector("[data-label]").alt = "billede af" + produkt.acf.billede.title;
                 klon.querySelector("#article_produkt").addEventListener("click", () => {
                     window.location.href = "coffee_table_single.html?id=" + produkt.id;
                 });
-
 
                 // appendChild betyder læg mere til. Resultere at flere emner lægger sig i bunden
                 display.appendChild(klon);
@@ -177,7 +172,6 @@
 
         document.querySelector(".burger").addEventListener("click", toggleMenu);
         document.querySelector("nav").addEventListener("click", toggleMenu);
-
     </script>
 </body>
 

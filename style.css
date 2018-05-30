@@ -141,7 +141,7 @@ body {
 .cube img,
 .coffeetable img,
 .shortcoffeetable img,
-.longcoffeetable img {
+.longconsoletable img {
     height: auto;
     width: 40%;
 }
@@ -149,7 +149,7 @@ body {
 .cube,
 .coffeetable,
 .shortcoffeetable,
-.longcoffeetable {
+.longconsoletable {
     padding-top: 100px;
     text-align: center;
 
@@ -163,4 +163,6 @@ body {
 
 /*------- DESKTOP -------*/
 
-@media screen and (min-width:1024px) {}
+@media screen and (min-width:1024px) {
+
+}
