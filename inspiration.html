@@ -51,29 +51,53 @@
     </section>
 
     <footer>
-        <div id="adresse">
-            <p>IKON KØBENHAVN APS<br> NØRRE VOLDGADE 42 KLD.<br> KØBENHAVN K, 1358</p>
-        </div>
-        <div id="cvrnummer">
-            <p>21254746</p>
-        </div>
-        <div id="forsendelseogretur">
-            <a href="forsendelseogretur.html">
-                <p>FORSENDELSE OG RETUR</p>
-            </a>
-        </div>
-        <div id="privatpolitik">
-            <a href="privatpolitik.html">
-                <p>PRIVAT POLITIK</p>
-            </a>
-        </div>
-        <div id="reglerogvilkaar">
-            <a href="reglerogvilkaar.html">
-                <p>REGLER OG VILKÅR</p>
-            </a>
-        </div>
-    </footer>
-    <template id="temp_inspiration">
+        <footer>
+
+            <div id="sociale_medier">
+                <div class="instagram">
+                    <a href="https://www.instagram.com/food8dk/"><img src="filer/asset2.png"></a>
+                </div>
+                <div class="facebook">
+                    <a href="https://www.facebook.com/food8dk/"><img src="filer/asset4.png"></a>
+                </div>
+
+            </div>
+            <div id="adresse_footer">
+                <div class="virksomhed">
+                    <p>IKON KØBENHAVN APS</p>
+                </div>
+                <div class="gade">
+                    <p>NØRRE VOLDGADE 42 KLD.</p>
+                </div>
+                <div class="postnummer">
+                    <p>KØBENHAVN K, 1358</p>
+                </div>
+            </div>
+            <div id="cvrnummer_footer">
+                <p>CVR: 21254746</p>
+            </div>
+            <div id="gavekort_footer">
+                <a href="gavekort.html">
+                    <p>GAVEKORT</p>
+                </a>
+            </div>
+            <div id="forsendelseogretur_footer">
+                <a href="forsendelseogretur.html">
+                    <p>FORSENDELSE OG RETUR</p>
+                </a>
+            </div>
+            <div id="privatpolitik_footer">
+                <a href="privatpolitik.html">
+                    <p>PRIVAT POLITIK</p>
+                </a>
+            </div>
+            <div id="reglerogvilkaar_footer">
+                <a href="reglerogvilkaar.html">
+                    <p>REGLER OG VILKÅR</p>
+                </a>
+            </div>
+        </footer>
+        <template id="temp_inspiration">
             <article id="article_inspiration" data-inspiration>
                 <h2 data-header></h2>
                 <div class="billede_inspiration">
@@ -82,77 +106,77 @@
             </article>
         </template>
 
-    <script>
-        //INSPIRATION
-        let jSonUrl = "http://gryfaberbay.dk/ikon/wordpress/wp-json/wp/v2/inspiration";
-        let inspiration = [];
-        let display = document.querySelector("#display");
-        let template = document.querySelector("#temp_inspiration");
+        <script>
+            //INSPIRATION
+            let jSonUrl = "http://gryfaberbay.dk/ikon/wordpress/wp-json/wp/v2/inspiration";
+            let inspiration = [];
+            let display = document.querySelector("#display");
+            let template = document.querySelector("#temp_inspiration");
 
-        document.addEventListener("DOMContentLoaded", hentJson);
+            document.addEventListener("DOMContentLoaded", hentJson);
 
-        async function hentJson() {
-            let dataJson = await fetch(jSonUrl);
-            inspirationer = await dataJson.json();
-            //viser arrayet efter json er hentet ind
-            console.log(inspirationer);
-            visInspirationer();
-        }
-        //ud fra endpoints udfyldes templaten
-        function visInspirationer() {
-            inspirationer.forEach(inspiration => {
-                let klon = template.cloneNode(true).content;
-                console.log(klon);
-                klon.querySelector("[data-header]").textContent = inspiration.title.rendered;
-                klon.querySelector("[data-image]").src = inspiration.acf.billede.url;
-                klon.querySelector("[data-image]").alt = "billede af" + inspiration.acf.billede.title;
+            async function hentJson() {
+                let dataJson = await fetch(jSonUrl);
+                inspirationer = await dataJson.json();
+                //viser arrayet efter json er hentet ind
+                console.log(inspirationer);
+                visInspirationer();
+            }
+            //ud fra endpoints udfyldes templaten
+            function visInspirationer() {
+                inspirationer.forEach(inspiration => {
+                    let klon = template.cloneNode(true).content;
+                    console.log(klon);
+                    klon.querySelector("[data-header]").textContent = inspiration.title.rendered;
+                    klon.querySelector("[data-image]").src = inspiration.acf.billede.url;
+                    klon.querySelector("[data-image]").alt = "billede af" + inspiration.acf.billede.title;
 
-                //giver hvert element sit [data-id] fra apiURL'en (Json)
-                klon.querySelector("[data-inspiration]").setAttribute("data-id", inspiration.id);
+                    //giver hvert element sit [data-id] fra apiURL'en (Json)
+                    klon.querySelector("[data-inspiration]").setAttribute("data-id", inspiration.id);
 
-                //gør elementerne klikbare så de kan vises i modalvindue
-                klon.querySelector("[data-inspiration]").addEventListener("click", openModal);
+                    //gør elementerne klikbare så de kan vises i modalvindue
+                    klon.querySelector("[data-inspiration]").addEventListener("click", openModal);
 
 
-                // appendChild betyder læg mere til. Resultere at flere emner lægger sig i bunden
-                display.appendChild(klon);
-            });
-        }
-        //funktion som åbner modalvindue
-        function openModal() {
-            //'this' refererer til det element der er klikket på
-            let my_id = this.getAttribute("data-id");
+                    // appendChild betyder læg mere til. Resultere at flere emner lægger sig i bunden
+                    display.appendChild(klon);
+                });
+            }
+            //funktion som åbner modalvindue
+            function openModal() {
+                //'this' refererer til det element der er klikket på
+                let my_id = this.getAttribute("data-id");
 
-            //finder endpoints for elementet der er klikket på
-            inspirationer.find(inspi => {
-                if (my_id == inspi.id) {
+                //finder endpoints for elementet der er klikket på
+                inspirationer.find(inspi => {
+                    if (my_id == inspi.id) {
 
-                    //gør modalvindue synligt
-                    document.querySelector("#popup").style.visibility = "visible";
+                        //gør modalvindue synligt
+                        document.querySelector("#popup").style.visibility = "visible";
 
-                    document.querySelector("[data-header]").textContent = inspi.title.rendered;
-                    document.querySelector("[data-beskrivelse]").innerHTML = inspi.acf.tekst;
-                    document.querySelector("[data-image]").src = inspi.acf.billede.url;
-                    document.querySelector("[data-image]").alt = "billede af" + inspi.acf.billede.title;
-                    document.querySelector("#popup button").addEventListener("click", closeModal);
-                }
-            })
-        }
+                        document.querySelector("[data-header]").textContent = inspi.title.rendered;
+                        document.querySelector("[data-beskrivelse]").innerHTML = inspi.acf.tekst;
+                        document.querySelector("[data-image]").src = inspi.acf.billede.url;
+                        document.querySelector("[data-image]").alt = "billede af" + inspi.acf.billede.title;
+                        document.querySelector("#popup button").addEventListener("click", closeModal);
+                    }
+                })
+            }
 
-        //lukker modalvindue
-        function closeModal() {
-            document.querySelector("#popup").style.visibility = "hidden";
-        }
+            //lukker modalvindue
+            function closeModal() {
+                document.querySelector("#popup").style.visibility = "hidden";
+            }
 
-        // burgermenu
-        function toggleMenu() {
-            document.querySelector(".burger").classList.toggle("change");
-            document.querySelector("nav").classList.toggle("show");
-        }
+            // burgermenu
+            function toggleMenu() {
+                document.querySelector(".burger").classList.toggle("change");
+                document.querySelector("nav").classList.toggle("show");
+            }
 
-        document.querySelector(".burger").addEventListener("click", toggleMenu);
-        document.querySelector("nav").addEventListener("click", toggleMenu);
-    </script>
+            document.querySelector(".burger").addEventListener("click", toggleMenu);
+            document.querySelector("nav").addEventListener("click", toggleMenu);
+        </script>
 </body>
 
 </html>
