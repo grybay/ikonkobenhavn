@@ -283,26 +283,25 @@ body {
         height: auto;
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: 1fr 1fr;
+        grid-template-rows: 1fr;
 
-    }
-
-    .motion_graphic {
-        border-radius: 100px;
-        height: 70px;
-        width: 70px;
     }
 
     .mine_oplysninger {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
         display: grid;
         justify-items: center;
+        align-items: center;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
     }
 
     .mine_oplysninger img {
         grid-column: 1 / 2;
         grid-row: 1 / 2;
-        height: 70px;
-        width: 70px;
+        height: 80px;
+        width: 80px;
     }
 
     .mine_oplysninger p {
@@ -317,11 +316,32 @@ body {
         grid-row: 1 / 2;
         display: grid;
         justify-items: center;
+        align-items: center;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+
+    .motion_graphic_betaling {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        border-radius: 100px;
+        height: 80px;
+        width: 80px;
+        display: grid;
+        justify-self: center;
     }
 
     .betaling img {
-        height: 70px;
-        width: 70px;
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        height: 80px;
+        width: 80px;
+    }
+
+    .betaling p {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+        text-align: center;
     }
 
     .godkendt {
@@ -329,11 +349,22 @@ body {
         grid-row: 1 / 2;
         display: grid;
         justify-items: center;
+        align-items: center;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
     }
 
     .godkendt img {
-        height: 70px;
-        width: 70px;
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        height: 80px;
+        width: 80px;
+    }
+
+    .godkendt p {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+        text-align: center;
     }
 
     .ordrebekraeftelse {
@@ -341,11 +372,22 @@ body {
         grid-row: 1 / 2;
         display: grid;
         justify-items: center;
+        align-items: center;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
     }
 
     .ordrebekraeftelse img {
-        height: 70px;
-        width: 70px;
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        height: 80px;
+        width: 80px;
+    }
+
+    .ordrebekraeftelse p {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+        text-align: center;
     }
 
 }
