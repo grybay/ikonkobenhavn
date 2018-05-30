@@ -136,12 +136,35 @@ body {
     overflow: scroll;
 }
 
+/* ----- FOOTER ----- */
+
+footer {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    background-color: #354150;
+    padding: 5vh 10vw;
+}
+
+#sociale_medier img {
+    height: auto;
+    width: 40%;
+}
+
+#sociale_medier {
+    grid-column: 1 / 4;
+    grid-row: 1 / 2;
+    display: grid;
+}
+
+
+
 /*------ SHOP KATEGORI ------*/
 
 .cube img,
 .coffeetable img,
 .shortcoffeetable img,
-.longconsoletable img {
+.longcoffeetable img {
     height: auto;
     width: 40%;
 }
@@ -149,7 +172,7 @@ body {
 .cube,
 .coffeetable,
 .shortcoffeetable,
-.longconsoletable {
+.longcoffeetable {
     padding-top: 100px;
     text-align: center;
 
@@ -163,6 +186,4 @@ body {
 
 /*------- DESKTOP -------*/
 
-@media screen and (min-width:1024px) {
-
-}
+@media screen and (min-width:1024px) {}
