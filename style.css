@@ -403,6 +403,22 @@ a {
 
 /*------- GAVEKORT -------*/
 
+#gavekort {
+    height: 100vh;
+    width: 100wv;
+
+}
+
+.gavekort_billede {
+    height: auto;
+    width: 50%;
+}
+
+.gavekort_billede img {
+    height: 100%;
+    width: 100%;
+}
+
 .dropbtn {
     background-color: #818181;
     color: white;
