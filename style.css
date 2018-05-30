@@ -9,6 +9,13 @@ body {
     font-family: 'Helvetica Neue', sans-serif;
 }
 
+
+a {
+    text-decoration: none;
+    color: gray;
+
+}
+
 @media screen and (max-width:767px) {
 
     /* MENU */
@@ -149,16 +156,17 @@ body {
         margin: 3em;
         height: 50vw;
         width: 80vw;
-
     }
 
     .billede {
-
         height: 100%;
         width: 100%;
-
+        padding-right: 3em;
     }
 
+    .tekst {
+        text-align: center;
+    }
 
 
     /* ----- FOOTER ----- */
