@@ -448,7 +448,9 @@ h2 {
 
 .gavekort_billede {
     height: auto;
-    width: 50%;
+    width: 80%;
+    padding-left: 40px;
+    padding-top: 200px;
 }
 
 .gavekort_billede img {
@@ -468,7 +470,7 @@ h2 {
 .dropdown {
     position: relative;
     display: inline-block;
-    padding-top: 50px;
+    padding-left: 140px;
 }
 
 .dropdown-content {
