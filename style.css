@@ -164,7 +164,7 @@ body {
 /*------- DESKTOP -------*/
 
 @media screen and (min-width:1024px) {
-    #videoen {
+    #infografik {
         border-radius: 100px;
     }
 }
