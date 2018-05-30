@@ -137,6 +137,32 @@ body {
 }
 
 
+/*-------JOURNAL -----*/
+
+#vaelg_inspiration {
+    padding-top: 3em;
+    margin: 3em;
+    height: 50vw;
+    width: 80vw;
+}
+
+#vaelg_events {
+    padding-top: 3em;
+    margin: 3em;
+    height: 50vw;
+    width: 80vw;
+
+}
+
+.billede {
+
+    height: 100%;
+    width: 100%;
+
+}
+
+
+
 /* ----- FOOTER ----- */
 
 footer {
