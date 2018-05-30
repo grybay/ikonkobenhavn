@@ -156,6 +156,23 @@ body {
 }
 
 
+
+/*----------JOURNAL ------*/
+
+#vaelg_events {
+
+    margin: 4em;
+    padding: 5em;
+}
+
+
+#vaelg_inspiration {
+
+    margin: 4em;
+    padding: 5em;
+}
+
+
 /*------- TABLET -------*/
 
 @media screen and (min-width:768px) and (max-width:1023px) {}
@@ -163,6 +180,4 @@ body {
 
 /*------- DESKTOP -------*/
 
-@media screen and (min-width:1024px) {
-
-}
+@media screen and (min-width:1024px) {}
