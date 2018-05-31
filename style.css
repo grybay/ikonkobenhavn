@@ -1179,7 +1179,8 @@ h2 {
         align-self: end;
     }
 
-    <<<<<<< HEAD=======#reglerogvilkaar_footer a {
+
+    #reglerogvilkaar_footer a {
         color: black;
     }
 
@@ -1229,5 +1230,3 @@ h2 {
         grid-row: 2 / 3;
         text-align: center;
     }
-    > > > > > > > origin/master
-}
