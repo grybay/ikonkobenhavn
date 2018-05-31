@@ -187,6 +187,35 @@ h2 {
     }
 
 
+
+    /*-------INSPIRATION -----*/
+    .billede_inspiration {
+        height: auto;
+        width: 100vw;
+        position: absolute;
+        z-index: 2;
+
+
+    }
+
+    .billede_inspiration img {
+        width: 100%;
+        height: auto;
+        padding-bottom: 2em;
+
+    }
+
+    #article_inspiration {}
+
+    #overskrift {
+        position: absolute;
+        z-index: 1;
+    }
+
+
+
+
+
     /* ----- FOOTER ----- */
     footer {
         display: grid;
