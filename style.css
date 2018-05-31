@@ -122,34 +122,6 @@ h2 {
     }
 
 
-    /*------ POP UP ------*/
-    #popup {
-        width: 100vw;
-        height: 100vh;
-        margin: 0;
-        background: rgba(255, 255, 255, .9);
-        position: fixed;
-        visibility: hidden;
-
-    }
-
-    #popup #close {
-        margin-left: 10px;
-        margin-top: 10px;
-    }
-
-    #popupindhold {
-        width: 80vw;
-        height: 70vh;
-        background: #fff;
-        left: 10vw;
-        top: 15vh;
-        margin: 0 auto;
-        position: absolute;
-        overflow: scroll;
-    }
-
-
 
     /*-----------FORSIDE -----------*/
     /* splash */
@@ -307,6 +279,53 @@ h2 {
 
 
     #article_inspiration:hover {}
+
+    /*------- MODAL INSPIRATION -----*/
+    #popup {
+        width: 100vw;
+        height: 100vh;
+        margin: 0;
+        background: rgba(255, 255, 255, .9);
+        position: fixed;
+        visibility: hidden;
+        z-index: 3;
+
+    }
+
+    #popup #close {
+        margin-left: 10px;
+        margin-top: 10px;
+    }
+
+    #popupindhold {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: 3;
+    }
+
+    #modal_article_inspiration {
+        width: 100%;
+        height: 100%;
+        display: grid;
+    }
+
+    .modal_billede_inspiration {
+        height: 90%;
+        width: 90%;
+        justify-self: center;
+        align-self: center;
+    }
+
+    .modal_billede_inspiration img {
+        height: auto;
+        width: 100%;
+
+    }
+
+    .modal_tekst_inspiration {
+        padding: 0 10%;
+    }
 
 
 
