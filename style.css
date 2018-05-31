@@ -204,11 +204,11 @@ h2 {
     }
 
     #logo_splash {
-        width: 80%;
+        width: 50%;
         height: auto;
         justify-self: center;
         align-self: center;
-        margin-top: 15vh;
+
     }
 
     #logo_splash img {
