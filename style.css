@@ -45,8 +45,7 @@ h2 {
     }
 
     #home_logo {
-        width: 200px;
-        height: auto;
+        width: 25vw;
         justify-self: center;
 
     }
@@ -183,20 +182,14 @@ h2 {
         animation-iteration-count: infinite;
     }
 
-    /*------------OM--------*/
-    .om_tekst {
-        padding: 3em;
-
+    @keyframes splash_cycle_kf {
+        from {
+            background-position: 0% -100%;
+        }
+        to {
+            background-position: -700% -100%;
+        }
     }
-
-    #om img {
-
-        width: 100vw;
-        height: auto;
-        padding-bottom: 3em;
-    }
-
-
 
 
     #logo_parent {
@@ -220,7 +213,6 @@ h2 {
     #logo_splash img {
         width: 100%;
         height: 100%;
-
     }
 
 
@@ -235,8 +227,8 @@ h2 {
     #tagline {
         align-self: center;
         justify-self: center;
-
     }
+
 
     #vision {
         margin: 3em;
@@ -271,12 +263,15 @@ h2 {
 
 
     /*-------INSPIRATION -----*/
-    .billede_inspiration {
+    #article_inspiration {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+    }
+
+    #article_inspiration .billede_inspiration {
         height: auto;
         width: 100vw;
-        position: absolute;
-        z-index: 2;
-
 
     }
 
@@ -287,12 +282,20 @@ h2 {
 
     }
 
-    #article_inspiration {}
 
-    #overskrift {
+    #article_inspiration .overskrift {
         position: absolute;
-        z-index: 1;
+        color: #ecd351;
+        z-index: 2;
+        display: grid;
+        justify-self: center;
+        align-self: center;
     }
+
+
+    #article_inspiration:hover {}
+
+
 
 
     /*------- GAVEKORT -------*/
@@ -1163,5 +1166,58 @@ h2 {
         align-self: end;
     }
 
+<<<<<<< HEAD
+=======
+    #reglerogvilkaar_footer a {
+        color: black;
+    }
+
+    #reglerogvilkaar_footer a:hover {
+        color: #EED04F;
+    }
+
+
+    /*------- SHOP KATEGORI -------*/
+    #kategorier {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+
+    .cube img,
+    .coffeetable img,
+    .shortcoffeetable img,
+    .longconsoletable img {
+        width: 250px;
+        height: auto;
+    }
+
+
+
+    .cube {
+        grid-column: 2 / 4;
+        grid-row: 1 / 2;
+        text-align: center;
+        padding-top: 50px;
+    }
+    .coffeetable {
+        grid-column: 4 / 6;
+        grid-row: 1 / 2;
+        text-align: center;
+        padding-top: 50px;
+    }
+
+    .shortcoffeetable {
+        grid-column: 2 / 4;
+        grid-row: 2 / 3;
+        text-align: center;
+    }
+
+    .longconsoletable {
+        grid-column: 4 / 6;
+        grid-row: 2 / 3;
+        text-align: center;
+    }
+>>>>>>> origin/master
 
 }
