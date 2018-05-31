@@ -1,4 +1,4 @@
-/*------- MOBIL --------*/
+/*------- GENERELT --------*/
 
 * {
     margin: 0;
@@ -21,6 +21,8 @@ a {
 h2 {
     font-size:
 }
+
+/*------- MOBIL --------*/
 
 @media screen and (max-width:767px) {
 
@@ -151,15 +153,37 @@ h2 {
 
 
     /*-----------FORSIDE -----------*/
-    #vision {
-        margin: 3em;
-        padding: 3em;
+    /* splash */
+    #splash {
+        height: 100vh;
+        width: 100vw;
+    }
+
+    /* SPLASH CONTAINER */
+    #splash_container {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        z-index: 1;
     }
 
 
+    /* SPLASH SPRITE */
+    #splash_sprite {
+        width: 100%;
+        height: 100%;
+        background-image: url(filer/mobile_splash_ikon.jpg);
+        background-size: 700% 100%;
+    }
 
+    .splash_cycle {
+        animation-name: splash_cycle_kf;
+        animation-duration: 15s;
+        animation-timing-function: steps(7);
+        animation-iteration-count: infinite;
+    }
 
-
+<<<<<<< HEAD
     /*------------OM--------*/
     .om_tekst {
         padding: 3em;
@@ -172,6 +196,55 @@ h2 {
     }
 
 
+=======
+    @keyframes splash_cycle_kf {
+        from {
+            background-position: 0% -100%;
+        }
+        to {
+            background-position: -700% -100%;
+        }
+    }
+
+
+    #logo_parent {
+        height: 100vh;
+        width: 100vw;
+        position: absolute;
+        z-index: 2;
+        display: grid;
+
+
+    }
+
+    #logo_splash {
+        width: 50%;
+        height: auto;
+        justify-self: center;
+        align-self: center;
+
+    }
+
+    #logo_splash img {
+        width: 100%;
+        height: 100%;
+    }
+
+
+    #overlay {
+        height: 100%;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.5);
+        position: absolute;
+        z-index: 2;
+    }
+
+
+    #vision {
+        margin: 3em;
+        padding: 3em;
+    }
+>>>>>>> origin/master
 
 
     /*-------JOURNAL -----*/
@@ -222,6 +295,71 @@ h2 {
     #overskrift {
         position: absolute;
         z-index: 1;
+    }
+
+
+    /*------- GAVEKORT -------*/
+    #gavekort {
+        height: 100vh;
+        width: 100wv;
+
+    }
+
+    .gavekort_beskrivelse {}
+
+    .gavekort_billede {
+        height: auto;
+        width: 80%;
+        padding-left: 40px;
+        padding-top: 100px;
+    }
+
+    .gavekort_billede img {
+        height: 100%;
+        width: 100%;
+    }
+
+    .dropbtn {
+        background-color: #818181;
+        color: white;
+        padding: 16px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+    }
+
+    .dropdown {
+        position: relative;
+        display: inline-block;
+        padding-left: 140px;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+    }
+
+    .dropdown-content p {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+    .dropdown-content p:hover {
+        background-color: #f1f1f1
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    .dropdown:hover .dropbtn {
+        background-color: #EED04F;
     }
 
 
@@ -499,75 +637,89 @@ h2 {
 }
 
 
-/*------- GAVEKORT -------*/
-
-#gavekort {
-    height: 100vh;
-    width: 100wv;
-
-}
-
-.gavekort_beskrivelse {}
-
-.gavekort_billede {
-    height: auto;
-    width: 80%;
-    padding-left: 40px;
-    padding-top: 100px;
-}
-
-.gavekort_billede img {
-    height: 100%;
-    width: 100%;
-}
-
-.dropbtn {
-    background-color: #818181;
-    color: white;
-    padding: 16px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-}
-
-.dropdown {
-    position: relative;
-    display: inline-block;
-    padding-left: 140px;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-}
-
-.dropdown-content p {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-
-.dropdown-content p:hover {
-    background-color: #f1f1f1
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-.dropdown:hover .dropbtn {
-    background-color: #EED04F;
-}
-
-
 /*------- TABLET -------*/
 
 @media screen and (min-width:768px) and (max-width:1023px) {
+
+    /*------- FORSIDE -------*/
+    /* splash */
+    #splash {
+        height: 100vh;
+        width: 100vw;
+    }
+
+    /* SPLASH CONTAINER */
+    #splash_container {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        z-index: 1;
+    }
+
+
+    /* SPLASH SPRITE */
+    #splash_sprite {
+        width: 100%;
+        height: 100%;
+        background-image: url(filer/splash_ikon.jpg);
+        background-size: 700% 100%;
+    }
+
+    .splash_cycle {
+        animation-name: splash_cycle_kf;
+        animation-duration: 15s;
+        animation-timing-function: steps(7);
+        animation-iteration-count: infinite;
+    }
+
+    @keyframes splash_cycle_kf {
+        from {
+            background-position: 0% -100%;
+        }
+        to {
+            background-position: -700% -100%;
+        }
+    }
+
+
+    #logo_parent {
+        height: 100vh;
+        width: 100vw;
+        position: absolute;
+        z-index: 2;
+        display: grid;
+
+
+    }
+
+    #logo_splash {
+        width: 80%;
+        height: auto;
+        justify-self: center;
+        align-self: center;
+        margin-top: 15vh;
+    }
+
+    #logo_splash img {
+        width: 20%;
+        height: auto;
+    }
+
+
+    #overlay {
+        height: 100%;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.5);
+        position: absolute;
+        z-index: 2;
+    }
+
+
+    #vision {
+        margin: 3em;
+        padding: 3em;
+    }
+
     /* ----- FOOTER ----- */
     footer {
         display: grid;
@@ -769,4 +921,251 @@ h2 {
 
 /*------- DESKTOP -------*/
 
-@media screen and (min-width:1024px) {}
+@media screen and (min-width:1024px) {
+
+    /*------- FORSIDE -------*/
+    /* splash */
+    #splash {
+        height: 100vh;
+        width: 100vw;
+    }
+
+    /* SPLASH CONTAINER */
+    #splash_container {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        z-index: 1;
+    }
+
+
+    /* SPLASH SPRITE */
+    #splash_sprite {
+        width: 100%;
+        height: 100%;
+        background-image: url(filer/splash_ikon.jpg);
+        background-size: 700% 100%;
+    }
+
+    .splash_cycle {
+        animation-name: splash_cycle_kf;
+        animation-duration: 15s;
+        animation-timing-function: steps(7);
+        animation-iteration-count: infinite;
+    }
+
+    @keyframes splash_cycle_kf {
+        from {
+            background-position: 0% -100%;
+        }
+        to {
+            background-position: -700% -100%;
+        }
+    }
+
+
+    #logo_parent {
+        height: 100vh;
+        width: 100vw;
+        position: absolute;
+        z-index: 2;
+        display: grid;
+
+
+    }
+
+    #logo_splash {
+        width: 80%;
+        height: auto;
+        justify-self: center;
+        align-self: center;
+        margin-top: 15vh;
+    }
+
+    #logo_splash img {
+        width: 20%;
+        height: auto;
+    }
+
+
+    #overlay {
+        height: 100%;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.5);
+        position: absolute;
+        z-index: 2;
+    }
+
+
+    #vision {
+        margin: 3em;
+        padding: 3em;
+    }
+
+
+    #menu_open a:hover {
+        color: #EED04F
+    }
+
+    #menu_open {
+        display: grid;
+        grid-template-columns: 1fr, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr;
+        grid-template-rows: 1fr;
+    }
+
+    #home_logo img {
+        width: 100px;
+        height: auto;
+    }
+
+    #home_indkoebskurv img {
+        width: 100px;
+        height: auto;
+    }
+
+
+
+    #home_logo {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+    }
+
+    .burger {
+        display: none;
+    }
+
+    #nav_shop {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+        justify-self: center;
+        align-self: end;
+    }
+
+    #nav_journal {
+        grid-column: 3 / 4;
+        grid-row: 1 / 2;
+        justify-self: center;
+        align-self: end;
+    }
+
+    #nav_om {
+        grid-column: 4 / 5;
+        grid-row: 1 / 2;
+        justify-self: center;
+        align-self: end;
+    }
+
+    #nav_kontakt {
+        grid-column: 5 / 6;
+        grid-row: 1 / 2;
+        justify-self: center;
+        align-self: end;
+    }
+
+    #home_indkoebskurv {
+        grid-column: 6 / 7;
+        grid-row: 1 / 2;
+        justify-self: end;
+        align-self: start;
+    }
+    /* ----- FOOTER ----- */
+    footer {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        background-color: #354150;
+        padding: 5vh 10vw;
+    }
+
+    .facebook img,
+    .instagram img {
+        height: 100%;
+        width: 100%;
+        justify-self: center;
+
+    }
+
+
+    #sociale_medier {
+        grid-column: 2 / 4;
+        grid-row: 1 / 2;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+
+    }
+
+    .facebook {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        width: 10vw;
+        height: 10vw;
+        justify-self: center;
+
+
+    }
+
+    .instagram {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+        width: 10vw;
+        height: 10vw;
+        justify-self: center;
+    }
+
+    #adresse_footer {
+        grid-column: 4 / 5;
+        grid-row: 1 / 4;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+    }
+
+    .virksomhed {
+        grid-row: 1 / 2;
+        grid-column: 1 / 2;
+    }
+
+    .gade {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+    }
+
+    .postnummer {
+        grid-row: 3 / 4;
+        grid-column: 1 / 2;
+    }
+
+    #cvrnummer_footer {
+        grid-column: 4 / 5;
+        grid-row: 4 / 5;
+        align-self: end;
+    }
+
+
+    #privatpolitik_footer {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+        align-self: center;
+    }
+
+    #gavekort_footer {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        align-self: start;
+    }
+
+    #forsendelseogretur_footer {
+        grid-column: 1 / 2;
+        grid-row: 3 / 4;
+        align-self: center;
+    }
+
+    #reglerogvilkaar_footer {
+        grid-column: 1 / 2;
+        grid-row: 4 / 5;
+        align-self: end;
+    }
+
+
+}
