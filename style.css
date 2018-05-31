@@ -823,6 +823,6 @@ h2 {
         grid-column: 6 / 7;
         grid-row: 1 / 2;
         justify-self: end;
-        align-self: end;
+        align-self: start;
     }
 }
