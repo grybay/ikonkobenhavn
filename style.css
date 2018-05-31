@@ -646,6 +646,50 @@ h2 {
         text-align: center;
     }
 
+    /*------ EVENTS ------*/
+    #article_event {
+        height: auto;
+        width: 100vw;
+        padding-bottom: 5vh;
+        padding-top: 7vh;
+        display: grid;
+        justify-items: center;
+        align-items: center;
+    }
+
+    .billede_event {
+        height: auto;
+        width: 80%;
+        margin-bottom: 20px;
+    }
+
+    #article_event img {
+        height: auto;
+        width: 100%;
+    }
+
+    #article_event .tekst_event {
+        display: grid;
+        justify-items: center;
+        width: 80vw;
+    }
+
+    #article_event .tekst_event h2 {
+        height: auto;
+        width: 100%;
+    }
+
+    #article_event .tekst_event h3 {
+        height: auto;
+        width: 100%;
+    }
+
+    #article_event .tekst_event p {
+        height: auto;
+        width: 100%;
+
+    }
+
 }
 
 
