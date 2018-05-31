@@ -25,6 +25,8 @@
                     <a href="journal.html" id="nav_journal">Journal</a>
                     <a href="om.html" id="nav_om">Om</a>
                     <a href="kontakt.html" id="nav_kontakt">Kontakt</a>
+                    <a href="index.html" id="home_indkoebskurv">
+                        <img src="filer/graa_indkoebskurv.png" alt="logo">
                 </div>
             </nav>
         </div>
@@ -37,10 +39,10 @@
         <div id="sociale_medier">
             <div class="instagram">
                 <a href="https://www.instagram.com/food8dk/"><img src="filer/asset2.png"></a>
-            </div>
-            <div class="facebook">
-                <a href="https://www.facebook.com/food8dk/"><img src="filer/asset4.png"></a>
-            </div>
+                </div>
+                <div class="facebook">
+                    <a href="https://www.facebook.com/food8dk/"><img src="filer/asset4.png"></a>
+                </div>
 
         </div>
         <div id="adresse_footer">
@@ -77,8 +79,8 @@
                 <p>REGLER OG VILKÅR</p>
             </a>
         </div>
-    </footer>
-    <template id="temp_event">
+        </footer>
+        <template id="temp_event">
             <article id="article_event" data-event>
                 <h2 data-header></h2>
                 <h3 data-dato></h3>
@@ -92,51 +94,51 @@
 
 
 
-    <script>
-        //EVENT
-        let jSonUrl =
-            "http://gryfaberbay.dk/ikon/wordpress/wp-json/wp/v2/event";
-        let event = [];
-        let display = document.querySelector("#display");
-        let template = document.querySelector("#temp_event");
+        <script>
+            //EVENT
+            let jSonUrl =
+                "http://gryfaberbay.dk/ikon/wordpress/wp-json/wp/v2/event";
+            let event = [];
+            let display = document.querySelector("#display");
+            let template = document.querySelector("#temp_event");
 
-        document.addEventListener("DOMContentLoaded", hentJson);
+            document.addEventListener("DOMContentLoaded", hentJson);
 
-        async function hentJson() {
-            let dataJson = await fetch(jSonUrl);
-            events = await dataJson.json();
-            //viser arrayet efter json er hentet ind
-            console.log(events);
-            visEvents();
-        }
+            async function hentJson() {
+                let dataJson = await fetch(jSonUrl);
+                events = await dataJson.json();
+                //viser arrayet efter json er hentet ind
+                console.log(events);
+                visEvents();
+            }
 
-        function visEvents() {
-            events.forEach(event => {
-                let klon = template.cloneNode(true).content;
-                console.log(klon);
-                klon.querySelector("[data-header]").textContent = event.title.rendered;
-                klon.querySelector("[data-image]").src = event.acf.billede.url;
-                klon.querySelector("[data-image]").alt = "billede af" + event.acf.billede.title;
-                klon.querySelector("[data-dato]").textContent = event.acf.dato;
-                klon.querySelector("[data-tekst]").innerHTML = event.acf.tekst;
-
-
-                // appendChild betyder læg mere til. Resultere at flere emner lægger sig i bunden
-                display.appendChild(klon);
-            });
-        }
+            function visEvents() {
+                events.forEach(event => {
+                    let klon = template.cloneNode(true).content;
+                    console.log(klon);
+                    klon.querySelector("[data-header]").textContent = event.title.rendered;
+                    klon.querySelector("[data-image]").src = event.acf.billede.url;
+                    klon.querySelector("[data-image]").alt = "billede af" + event.acf.billede.title;
+                    klon.querySelector("[data-dato]").textContent = event.acf.dato;
+                    klon.querySelector("[data-tekst]").innerHTML = event.acf.tekst;
 
 
+                    // appendChild betyder læg mere til. Resultere at flere emner lægger sig i bunden
+                    display.appendChild(klon);
+                });
+            }
 
 
-        // burgermenu
-        function toggleMenu() {
-            document.querySelector(".burger").classList.toggle("change");
-            document.querySelector("nav").classList.toggle("show");
-        }
 
-        document.querySelector(".burger").addEventListener("click", toggleMenu);
-        document.querySelector("nav").addEventListener("click", toggleMenu);
-    </script>
+
+            // burgermenu
+            function toggleMenu() {
+                document.querySelector(".burger").classList.toggle("change");
+                document.querySelector("nav").classList.toggle("show");
+            }
+
+            document.querySelector(".burger").addEventListener("click", toggleMenu);
+            document.querySelector("nav").addEventListener("click", toggleMenu);
+        </script>
 </body>
 </html>
