@@ -165,14 +165,12 @@ h2 {
     /*-------JOURNAL -----*/
     #vaelg_inspiration {
         padding-top: 3em;
-        margin: 3em;
         height: 50vw;
         width: 80vw;
     }
 
     #vaelg_events {
-        padding-top: 3em;
-        margin: 3em;
+        padding: 3em;
         height: 50vw;
         width: 80vw;
     }
