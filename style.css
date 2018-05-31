@@ -1205,5 +1205,46 @@ h2 {
     }
 
 
+    /*------- SHOP KATEGORI -------*/
+    #kategorier {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+    }
+
+    .cube img,
+    .coffeetable img,
+    .shortcoffeetable img,
+    .longconsoletable img {
+        width: 250px;
+        height: auto;
+    }
+
+
+
+    .cube {
+        grid-column: 2 / 4;
+        grid-row: 1 / 2;
+        text-align: center;
+        padding-top: 50px;
+    }
+    .coffeetable {
+        grid-column: 4 / 6;
+        grid-row: 1 / 2;
+        text-align: center;
+        padding-top: 50px;
+    }
+
+    .shortcoffeetable {
+        grid-column: 2 / 4;
+        grid-row: 2 / 3;
+        text-align: center;
+    }
+
+    .longconsoletable {
+        grid-column: 4 / 6;
+        grid-row: 2 / 3;
+        text-align: center;
+    }
 
 }
