@@ -165,12 +165,13 @@ h2 {
     /*-------JOURNAL -----*/
     #vaelg_inspiration {
         padding-top: 3em;
+        margin: 2.5em;
         height: 50vw;
         width: 80vw;
     }
 
     #vaelg_events {
-        padding: 3em;
+        padding: 2.5em;
         height: 50vw;
         width: 80vw;
     }
@@ -184,6 +185,35 @@ h2 {
     .tekst {
         text-align: center;
     }
+
+
+
+    /*-------INSPIRATION -----*/
+    .billede_inspiration {
+        height: auto;
+        width: 100vw;
+        position: absolute;
+        z-index: 2;
+
+
+    }
+
+    .billede_inspiration img {
+        width: 100%;
+        height: auto;
+        padding-bottom: 2em;
+
+    }
+
+    #article_inspiration {}
+
+    #overskrift {
+        position: absolute;
+        z-index: 1;
+    }
+
+
+
 
 
     /* ----- FOOTER ----- */
