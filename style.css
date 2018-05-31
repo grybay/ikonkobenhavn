@@ -693,9 +693,19 @@ h2 {
 }
 
 
+
+
+
+
+
+
 /*------- TABLET -------*/
 
 @media screen and (min-width:768px) and (max-width:1023px) {
+
+    body {
+        background-color: aqua;
+    }
 
     /*------- FORSIDE -------*/
     /* splash */
@@ -775,6 +785,54 @@ h2 {
         margin: 3em;
         padding: 3em;
     }
+
+
+    /*-------JOURNAL-------*/
+    #vaelg_inspiration {
+        padding-top: 3em;
+        margin: 4em;
+        height: 50vw;
+        width: 80vw;
+    }
+
+    #vaelg_events {
+        padding: 3m;
+        margin: 4em;
+        height: 50vw;
+        width: 80vw;
+        padding-bottom: 7em;
+    }
+
+    .billede {
+        height: 100%;
+        width: 100%;
+        padding: 1em;
+
+    }
+
+    .tekst {
+        text-align: center;
+    }
+
+
+
+
+    /*------OM------*/
+    .om_tekst {
+        padding: 5em;
+
+    }
+
+    #om img {
+        width: 50vw;
+        height: auto;
+        padding-bottom: 3em;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        padding: 5vh 10vw;
+    }
+
 
     /* ----- FOOTER ----- */
     footer {
