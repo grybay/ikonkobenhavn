@@ -1058,8 +1058,11 @@ h2 {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
         grid-template-rows: 1fr 1fr 1fr 1fr;
-        background-color: #354150;
+        background-color: #818181;
         padding: 5vh 10vw;
+
+        height: 20vh;
+        width: auto;
     }
 
     .facebook img,
@@ -1083,8 +1086,8 @@ h2 {
     .facebook {
         grid-column: 1 / 2;
         grid-row: 1 / 2;
-        width: 10vw;
-        height: 10vw;
+        width: 5vw;
+        height: 5vw;
         justify-self: center;
 
 
@@ -1093,8 +1096,8 @@ h2 {
     .instagram {
         grid-column: 2 / 3;
         grid-row: 1 / 2;
-        width: 10vw;
-        height: 10vw;
+        width: 5vw;
+        height: 5vw;
         justify-self: center;
     }
 
@@ -1109,6 +1112,7 @@ h2 {
     .virksomhed {
         grid-row: 1 / 2;
         grid-column: 1 / 2;
+        align-self: center;
     }
 
     .gade {
@@ -1119,6 +1123,7 @@ h2 {
     .postnummer {
         grid-row: 3 / 4;
         grid-column: 1 / 2;
+        align-self: start;
     }
 
     #cvrnummer_footer {
@@ -1128,22 +1133,49 @@ h2 {
     }
 
 
+
     #privatpolitik_footer {
         grid-column: 1 / 2;
         grid-row: 2 / 3;
-        align-self: center;
+        align-self: end;
+    }
+
+    #privatpolitik_footer a {
+        color: black;
+    }
+
+    #privatpolitik_footer a:hover {
+        color: #EED04F;
     }
 
     #gavekort_footer {
         grid-column: 1 / 2;
         grid-row: 1 / 2;
-        align-self: start;
+        align-self: end;
     }
+
+    #gavekort_footer a {
+        color: black;
+    }
+
+    #gavekort_footer a:hover {
+        color: #EED04F;
+    }
+
+
 
     #forsendelseogretur_footer {
         grid-column: 1 / 2;
         grid-row: 3 / 4;
-        align-self: center;
+        align-self: end;
+    }
+
+    #forsendelseogretur_footer a {
+        color: black;
+    }
+
+    #forsendelseogretur_footer a:hover {
+        color: #EED04F;
     }
 
     #reglerogvilkaar_footer {
@@ -1151,6 +1183,15 @@ h2 {
         grid-row: 4 / 5;
         align-self: end;
     }
+
+    #reglerogvilkaar_footer a {
+        color: black;
+    }
+
+    #reglerogvilkaar_footer a:hover {
+        color: #EED04F;
+    }
+
 
 
 }
