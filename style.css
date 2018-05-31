@@ -332,6 +332,17 @@ h2 {
         grid-template-rows: 1fr 1fr;
     }
 
+    .motion_graphic_mine_oplysninger {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        border-radius: 100px;
+        height: 80px;
+        width: 80px;
+        display: grid;
+        justify-self: center;
+    }
+
+
     .mine_oplysninger img {
         grid-column: 1 / 2;
         grid-row: 1 / 2;
@@ -389,6 +400,16 @@ h2 {
         grid-template-rows: 1fr 1fr;
     }
 
+    .motion_graphic_godkendt {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        border-radius: 100px;
+        height: 80px;
+        width: 80px;
+        display: grid;
+        justify-self: center;
+    }
+
     .godkendt img {
         grid-column: 1 / 2;
         grid-row: 1 / 2;
@@ -412,6 +433,16 @@ h2 {
         grid-template-rows: 1fr 1fr;
     }
 
+    .motion_graphic_ordrebekraeftelse {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        border-radius: 100px;
+        height: 80px;
+        width: 80px;
+        display: grid;
+        justify-self: center;
+    }
+
     .ordrebekraeftelse img {
         grid-column: 1 / 2;
         grid-row: 1 / 2;
@@ -430,6 +461,26 @@ h2 {
 
 /*------- GAVEKORT -------*/
 
+#gavekort {
+    height: 100vh;
+    width: 100wv;
+
+}
+
+.gavekort_beskrivelse {}
+
+.gavekort_billede {
+    height: auto;
+    width: 80%;
+    padding-left: 40px;
+    padding-top: 100px;
+}
+
+.gavekort_billede img {
+    height: 100%;
+    width: 100%;
+}
+
 .dropbtn {
     background-color: #818181;
     color: white;
@@ -442,7 +493,7 @@ h2 {
 .dropdown {
     position: relative;
     display: inline-block;
-    padding-top: 50px;
+    padding-left: 140px;
 }
 
 .dropdown-content {
