@@ -419,7 +419,7 @@ h2 {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
         grid-template-rows: 1fr 1fr 1fr 1fr;
-        background-color: #354150;
+        background-color: #818181;
         padding: 5vh 10vw;
     }
 
@@ -511,6 +511,48 @@ h2 {
         grid-row: 4 / 5;
         align-self: end;
     }
+
+    #cvrnummer_footer a {
+        color: black
+    }
+
+    #cvrnummer_footer a:hover {
+        color: #EED04F;
+    }
+
+
+    #privatpolitik_footer a {
+        color: black
+    }
+
+    #privatpolitik_footer a:hover {
+        color: #EED04F;
+    }
+
+    #gavekort_footer a {
+        color: black
+    }
+
+    #gavekort_footer a:hover {
+        color: #EED04F;
+    }
+
+    #forsendelseogretur_footer a {
+        color: black
+    }
+
+    #forsendelseogretur_footer a:hover {
+        color: #EED04F;
+    }
+
+    #reglerogvilkaar_footer a {
+        color: black;
+    }
+
+    #reglerogvilkaar_footer a:hover {
+        color: #EED04F;
+    }
+
 
     /*------ SHOP KATEGORI ------*/
     .cube img,
