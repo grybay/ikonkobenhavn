@@ -1537,3 +1537,16 @@ section#filtrering button {
     background-color: transparent;
     display: inline-block;
 }
+
+section#filtrering {
+    margin-left: 5vw;
+    margin-right: 5vw;
+    padding-top: 60px;
+
+    width: 90vv;
+    height: 50px;
+    white-space: nowrap;
+    overflow: auto;
+
+
+}
