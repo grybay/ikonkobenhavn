@@ -1537,3 +1537,52 @@ section#filtrering button {
     background-color: transparent;
     display: inline-block;
 }
+
+/* ----- KONTAKT ----- */
+
+#kontakt {
+    height: auto;
+    width: 100vw;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+
+}
+
+.map {
+    height: auto;
+    width: 50vw;
+    padding-top: 100px;
+
+}
+
+.map img {
+    width: 100%;
+    height: auto;
+    padding-bottom: 5em;
+
+}
+
+.oplysninger {
+    height: auto;
+    width: 70%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+
+}
+
+
+#kontakt h2 {
+    text-align: center;
+    padding-top: 60px;
+}
+
+#kontakt p {
+    text-align: center;
+    padding-top: 3px;
+}
+
+.kontakt_forhandlere {
+    padding-bottom: 80px;
+}
