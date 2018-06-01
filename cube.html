@@ -32,6 +32,7 @@
 
     <!-- filtreringstag -->
     <section id="filtrering">
+        <button class="tags">alle</button>
         <button class="tags">orange</button>
         <button class="tags">mørkeblå</button>
         <button class="tags">lyserød grøn</button>
@@ -113,7 +114,7 @@
 
         //FILTERKNAPPER
         let filtertype;
-        let filternavn = "Alle";
+        let filternavn = "alle";
         let filterknapper = document.querySelectorAll("#filtrering button").forEach(knap => {
             knap.addEventListener("click", (e) => {
                 filtertype = e.target.className;
@@ -133,7 +134,7 @@
         function lavFiltrering() { // filtertypen indeholder tagsene, som viser sig at være en array! Derfor laver vi følgende if-sætning:
 
             //hvis filternavnet ikke er lig med alle, sker følgende:
-            if (filternavn != "Alle") {
+            if (filternavn != "alle") {
                 //vi laver lokal variabel som er et tomt array
                 let filtrerede_produkter = [];
                 //vi laver forEach funktion for vores produkter-array
@@ -186,7 +187,6 @@
 
         document.querySelector(".burger").addEventListener("click", toggleMenu);
         document.querySelector("nav").addEventListener("click", toggleMenu);
-
     </script>
 </body>
 
