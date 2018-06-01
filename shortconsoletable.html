@@ -94,13 +94,14 @@
     </footer>
     <template id="temp_produkt">
             <article id="article_produkt" data-inspiration>
-                <h1 data-overskrift></h1>
-                <p data-pris></p>
+                <h1 class="overskrift" data-overskrift></h1>
+                <p class="pris" data-pris></p>
+                <div class="parent_produkt">
                 <div class="billede_produkt">
                     <img data-image src="" alt="">
                 </div>
                 <div class="label_produkt">
-                    <img data-label src="" alt="">
+                    <img data-label src="" alt=""></div>
                 </div>
         </article>
     </template>
@@ -189,7 +190,6 @@
 
         document.querySelector(".burger").addEventListener("click", toggleMenu);
         document.querySelector("nav").addEventListener("click", toggleMenu);
-
     </script>
 </body>
 
