@@ -236,16 +236,32 @@ h2 {
 
 
     /*-------OM-------*/
-    .om_tekst {
-        padding: 3em;
-    }
-
-    #om img {
-        width: 100vw;
+    .map {
         height: auto;
-        padding-bottom: 3em;
+        width: 100vw;
+        padding-top: 100px;
     }
 
+    .map img {
+        width: 100%;
+        height: auto;
+        padding-bottom: 2em;
+
+    }
+
+    #kontakt h2 {
+        text-align: center;
+        padding-top: 40px;
+    }
+
+    #kontakt p {
+        text-align: center;
+        padding-top: 3px;
+    }
+
+    .kontakt_forhandlere {
+        padding-bottom: 80px;
+    }
 
     /*-------INSPIRATION -----*/
     #article_inspiration {
