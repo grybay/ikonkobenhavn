@@ -51,9 +51,71 @@
         </div>
     </section>
 
+    <section id="pil_infografik">
+        <img class="pil_indtast_oplysninger" src="filer/pil_infografik.svg" alt="Pil">
+    </section>
+
+
     <section id="mine_oplysningerside">
         <h2>Indtast dine oplysninger</h2>
-        <a href="betaling.html">Videre</a>
+
+        <form id="formular" method="post" action="sendmail.php">
+            <div class="indtastningsfelt">
+                <label for="fornavn"><p>Fornavn</p></label><br>
+                <input type="text" name="firstname">
+            </div>
+
+            <div class="indtastningsfelt">
+                <label for="efternavn"><p>Efternavn</p></label><br>
+                <input type="text" name="lastname">
+            </div>
+
+            <div class="indtastningsfelt">
+                <label for="email"><p>Email</p></label><br>
+                <input type="email" name="email">
+            </div>
+
+            <div class="indtastningsfelt">
+                <label for="phone"><p>Telefon</p></label><br>
+                <input type="text" name="phone">
+            </div>
+
+            <div class="indtastningsfelt">
+                <label for="address"><p>Adresse</p></label><br>
+                <input type="text" name="address">
+            </div>
+
+            <div class="indtastningsfelt">
+                <label for="postcode"><p>Postnummer</p></label><br>
+                <input type="text" name="postcode">
+            </div>
+
+            <div class="indtastningsfelt">
+                <label for="city"><p>By</p></label><br>
+                <input type="text" name="city">
+            </div>
+
+            <div class="indtastningsfelt">
+                <label for="delivery"><p>Levering</p></label><br>
+                <select name="levering">
+                    <option value="afhent_butik">Afhent i butik</option>
+                    <option value="levering_adresse">Levering til adresse</option>
+                </select>
+            </div>
+
+            <div class="indtastningsfelt">
+                <label for="comment"><p>Kommentarer</p></label><br>
+                <textarea rows="4" cols="50" name="comment" form="usrform">
+            </textarea>
+            </div>
+
+            <!-- <input class="submit" type="submit" value="Submit"> -->
+        </form>
+        <div class="videre_knap">
+            <a href="betaling.html">
+                <p>Videre</p>
+            </a>
+        </div>
     </section>
 
     <footer>
@@ -112,6 +174,7 @@
 
         document.querySelector(".burger").addEventListener("click", toggleMenu);
         document.querySelector("nav").addEventListener("click", toggleMenu);
+
     </script>
 </body>
 
