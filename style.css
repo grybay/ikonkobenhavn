@@ -19,8 +19,23 @@ a {
 }
 
 h2 {
-    font-size:
+    font-family: HelveticaNeue;
+    font-weight: 100;
+    font-size: 2.5em;
 }
+
+h3 {
+    font-family: HelveticaNeue;
+    font-weight: 100;
+    font-size: 2em;
+}
+
+p {
+    font-family: HelveticaNeue;
+    font-weight: 100;
+    font-size: 1.2em;
+}
+
 
 /*------- MOBIL --------*/
 
@@ -255,7 +270,8 @@ header nav.show {
 }
 
 
-#vaelg_inspiration .tekst, #vaelg_events .tekst {
+#vaelg_inspiration .tekst,
+#vaelg_events .tekst {
     text-align: center;
     height: 20%;
     padding-top: 35px;
