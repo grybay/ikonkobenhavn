@@ -232,10 +232,19 @@ h2 {
         text-align: center;
     }
 
-
-
-
     /*-------OM-------*/
+    .om_tekst {
+        padding: 3em;
+    }
+
+    img {
+        width: 100vw;
+        height: auto;
+        padding-bottom: 3em;
+    }
+
+
+    /*-------KONTAKT-------*/
     .map {
         height: auto;
         width: 100vw;
