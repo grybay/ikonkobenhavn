@@ -1395,3 +1395,66 @@ h2 {
     }
 
 }
+
+/* ----- PRODUKTSIDE ----- */
+
+#article_produkt {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-bottom: 20px;
+}
+
+.parent_produkt {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    height: 60vw;
+    width: 60vw;
+    margin-bottom: 20px;
+}
+
+.billede_produkt {
+    height: auto;
+    width: 100%;
+}
+
+.billede_produkt img {
+    width: 100%;
+    height: auto;
+}
+
+.label_produkt img {
+    height: 100%;
+    width: 100%;
+
+}
+
+.label_produkt {
+    width: 15%;
+    height: auto;
+    z-index: 3;
+    position: absolute;
+    padding: 15% 0 0 50%;
+}
+
+#article_produkt .overskrift {
+    position: absolute;
+    color: black;
+    opacity: 0.75;
+    z-index: 2;
+    display: grid;
+    justify-self: center;
+    align-self: flex-end;
+}
+
+#article_produkt .pris {
+    position: absolute;
+    color: black;
+    opacity: 0.5;
+    z-index: 2;
+    display: grid;
+    justify-self: center;
+    align-self: flex-end;
+    margin-top: 20px;
+}
