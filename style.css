@@ -342,7 +342,7 @@ p {
 
     #article_inspiration:hover {}
 
-    MOBIL:
+
     /*--------INSTAGALLERI --------*/
     #instagalleri .mobil {
         height: auto;
@@ -1520,6 +1520,700 @@ p {
         transition: 0.4s;
     }
 
+    /*-------KONTAKT-------*/
+    .map {
+        height: auto;
+        width: 100vw;
+        padding-top: 100px;
+    }
+
+    .map img {
+        width: 100%;
+        height: auto;
+        padding-bottom: 2em;
+
+    }
+
+    #kontakt h2 {
+        text-align: center;
+        padding-top: 40px;
+    }
+
+    #kontakt p {
+        text-align: center;
+        padding-top: 3px;
+    }
+
+    .kontakt_forhandlere {
+        padding-bottom: 80px;
+    }
+
+    /*-------INSPIRATION -----*/
+    #article_inspiration {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+    }
+
+    #article_inspiration .billede_inspiration {
+        height: auto;
+        width: 100vw;
+
+    }
+
+    .billede_inspiration img {
+        width: 100%;
+        height: auto;
+        padding-bottom: 2em;
+
+    }
+
+
+    #article_inspiration .overskrift {
+        position: absolute;
+        color: #ecd351;
+        z-index: 2;
+        display: grid;
+        justify-self: center;
+        align-self: center;
+    }
+
+
+    #article_inspiration:hover {}
+
+    /*------- MODAL INSPIRATION -----*/
+    #popup {
+        width: 100vw;
+        height: 100vh;
+        margin: 0;
+        background: rgba(255, 255, 255, .9);
+        position: fixed;
+        visibility: hidden;
+        z-index: 3;
+
+    }
+
+    #popup #close {
+        margin-left: 10px;
+        margin-top: 10px;
+    }
+
+    #popupindhold {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: 3;
+    }
+
+    #modal_article_inspiration {
+        width: 100%;
+        height: 100%;
+        display: grid;
+    }
+
+    .modal_billede_inspiration {
+        height: 90%;
+        width: 90%;
+        justify-self: center;
+        align-self: center;
+    }
+
+    .modal_billede_inspiration img {
+        height: auto;
+        width: 100%;
+
+    }
+
+    .modal_tekst_inspiration {
+        padding: 0 10%;
+    }
+
+    /*------- GAVEKORT -------*/
+    #gavekort {
+        height: 100vh;
+        width: 100wv;
+
+    }
+
+    .gavekort_beskrivelse {}
+
+    .gavekort_billede {
+        height: auto;
+        width: 80%;
+        padding-left: 40px;
+        padding-top: 100px;
+    }
+
+    .gavekort_billede img {
+        height: 100%;
+        width: 100%;
+    }
+
+    .dropbtn {
+        background-color: #818181;
+        color: white;
+        padding: 16px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+    }
+
+    .dropdown {
+        position: relative;
+        display: inline-block;
+        padding-left: 140px;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+    }
+
+    .dropdown-content p {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+    .dropdown-content p:hover {
+        background-color: #f1f1f1
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    .dropdown:hover .dropbtn {
+        background-color: #EED04F;
+    }
+
+    /*------ SHOP KATEGORI ------*/
+    .cube img,
+    .coffeetable img,
+    .shortcoffeetable img,
+    .longconsoletable img {
+        height: auto;
+        width: 40%;
+    }
+
+    .cube,
+    .coffeetable,
+    .shortcoffeetable,
+    .longconsoletable {
+        padding-top: 100px;
+        text-align: center;
+
+    }
+
+    /* OK */
+    #kategorier {
+        padding-bottom: 6em;
+
+    }
+
+    /*------ SHOP SINGLE ------*/
+    #article_produkt_single {
+        display: grid;
+        height: 100vh;
+        width: 100vw;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+    }
+
+    .billede_produkt_single {
+        width: 100vw;
+        height: auto;
+        grid-row: 1 / 2;
+        grid-column: 1 / 3;
+
+    }
+
+    .billede_produkt_single img {
+        width: 100%;
+        height: auto;
+
+    }
+
+    .label_produkt_single {
+        display: none;
+    }
+
+    .overskrift_produkt_single {
+        width: auto;
+        height: auto;
+        grid-row: 2 / 3;
+        grid-column: 1 / 3;
+        align-self: end;
+        padding: 1em;
+    }
+
+    .beskrivelse_produkt_single {
+        height: auto;
+        width: auto;
+        grid-column: 1 / 3;
+        grid-row: 3 / 4;
+        padding: 1em;
+    }
+
+    .dimensioner_produkt_single {
+        height: auto;
+        width: auto;
+        grid-column: 1 / 3;
+        grid-row: 4 / 5;
+        padding: 1em;
+    }
+
+    .pris_produkt_single {
+        height: auto;
+        width: auto;
+        grid-column: 1 / 2;
+        grid-row: 5 / 6;
+        text-align: center;
+        padding: 1em;
+        font-size: 1.5em;
+        padding: 0 1em 3em 1em;
+
+    }
+
+    #bestillingsknap {
+        width: 100%;
+        height: auto;
+        display: grid;
+        justify-self: end;
+        grid-column: 2 / 3;
+        grid-row: 5 / 6;
+
+    }
+
+    #bestillingsknap a {
+        font-size: 1.5em;
+        padding: 0 1em 3em 1em;
+
+    }
+
+    /*------ SHOP KØB ------*/
+    #infografik {
+        width: 90vw;
+        height: auto;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 1fr;
+        padding: 7vh 5vw 0 5vw;
+
+    }
+
+    .mine_oplysninger {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        display: grid;
+        justify-items: center;
+        align-items: center;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+
+    .motion_graphic_mine_oplysninger {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        border-radius: 100px;
+        height: 80px;
+        width: 80px;
+        display: grid;
+        justify-self: center;
+    }
+
+
+    .mine_oplysninger img {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        height: 80px;
+        width: 80px;
+    }
+
+    .mine_oplysninger p {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+        text-align: center;
+    }
+
+
+    .betaling {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+        display: grid;
+        justify-items: center;
+        align-items: center;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+
+    .motion_graphic_betaling {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        border-radius: 100px;
+        height: 80px;
+        width: 80px;
+        display: grid;
+        justify-self: center;
+    }
+
+    .betaling img {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        height: 80px;
+        width: 80px;
+    }
+
+    .betaling p {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+        text-align: center;
+    }
+
+    .godkendt {
+        grid-column: 3 / 4;
+        grid-row: 1 / 2;
+        display: grid;
+        justify-items: center;
+        align-items: center;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+
+    .motion_graphic_godkendt {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        border-radius: 100px;
+        height: 80px;
+        width: 80px;
+        display: grid;
+        justify-self: center;
+    }
+
+    .godkendt img {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        height: 80px;
+        width: 80px;
+    }
+
+    .godkendt p {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+        text-align: center;
+    }
+
+    .ordrebekraeftelse {
+        grid-column: 4 / 5;
+        grid-row: 1 / 2;
+        display: grid;
+        justify-items: center;
+        align-items: center;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+
+    .motion_graphic_ordrebekraeftelse {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        border-radius: 100px;
+        height: 80px;
+        width: 80px;
+        display: grid;
+        justify-self: center;
+    }
+
+    .ordrebekraeftelse img {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        height: 80px;
+        width: 80px;
+    }
+
+    .ordrebekraeftelse p {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+        text-align: center;
+    }
+
+    /*------ PIL INFOGRAFIK ------*/
+    #pil_infografik {
+        width: 90vw;
+        height: auto;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 1fr;
+        padding: 0 5vw;
+
+    }
+
+    .pil_indtast_oplysninger {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        height: 20px;
+        width: 25vw;
+    }
+
+    .pil_betaling {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+        height: 20px;
+        width: 25vw;
+    }
+
+    .pil_godkendt {
+        grid-column: 3 / 4;
+        grid-row: 1 / 2;
+        height: 20px;
+        width: 25vw;
+    }
+
+    .pil_ordrebekraeftelse {
+        grid-column: 4 / 5;
+        grid-row: 1 / 2;
+        height: 20px;
+        width: 25vw;
+    }
+
+    .pil_indtast_oplysninger img,
+    .pil_betaling img,
+    .pil_godkendt img,
+    .pil_ordrebekraeftelse img {
+        height: 100%;
+        width: 100%;
+    }
+
+    /*------MINE OPLYSNINGER SIDE, BETALINGSSIDE ------*/
+    #mine_oplysningerside,
+    #betalingsside,
+    #godkendtside,
+    #ordrebekraeftelseside {
+        height: auto;
+        width: 100vw;
+        background-color: #fcf5de;
+        padding-bottom: 5%;
+    }
+
+    #mine_oplysningerside h2,
+    #betalingsside h2,
+    #godkendtside h2,
+    #ordrebekraeftelseside h2 {
+        text-align: center;
+        padding: 30px;
+    }
+
+    #formular {}
+
+    input {
+        width: 100%;
+        height: 20px;
+        border-radius: 100px;
+        border: none;
+        padding: 8px 0;
+    }
+
+    textarea {
+        width: 100%;
+        border: none;
+        padding: 8px 0;
+    }
+
+    select {
+        width: 100%;
+        height: 40px;
+        padding: 8px 0;
+        background-color: white;
+        border: none;
+    }
+
+    input[type=text] {}
+
+    .indtastningsfelt {
+        padding: 20px 10%;
+    }
+
+    /*
+    .submit {
+        width: 20%;
+        height: 40px;
+        padding: 8px 0;
+        background-color: white;
+        border: none;
+    }
+*/
+    .payment {
+        height: auto;
+        width: 80%;
+        padding: 0 10%;
+    }
+
+    .payment img {
+        width: 100%;
+        height: auto;
+    }
+
+    .godkendt_tekst p {
+        text-align: center;
+        padding: 0 40px 40px 40px;
+    }
+
+    .ordrebekraeftelse_tekst p {
+        text-align: center;
+        padding: 0 40px 40px 40px;
+    }
+
+    .videre_knap {
+        height: auto;
+        width: 20vw;
+        margin: 0 10vw 0 70vw;
+        background-color: white;
+        border: none;
+        text-align: center;
+    }
+
+    .videre_knap p {
+        padding: 20px;
+    }
+
+    .videre_knap:hover {
+        background-color: #ecd351;
+    }
+
+
+    /*------ EVENTS ------*/
+    #article_event {
+        height: auto;
+        width: 100vw;
+        padding-bottom: 5vh;
+        padding-top: 7vh;
+        display: grid;
+        justify-items: center;
+        align-items: center;
+    }
+
+    .billede_event {
+        height: auto;
+        width: 80%;
+        margin-bottom: 20px;
+    }
+
+    #article_event img {
+        height: auto;
+        width: 100%;
+    }
+
+    #article_event .tekst_event {
+        display: grid;
+        justify-items: center;
+        width: 80vw;
+    }
+
+    #article_event .tekst_event h2 {
+        height: auto;
+        width: 100%;
+    }
+
+    #article_event .tekst_event h3 {
+        height: auto;
+        width: 100%;
+    }
+
+    #article_event .tekst_event p {
+        height: auto;
+        width: 100%;
+
+    }
+
+    /* ----- PRODUKTSIDE ----- */
+    #article_produkt {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        margin-bottom: 20px;
+    }
+
+    .parent_produkt {
+        display: grid;
+        align-items: center;
+        justify-items: center;
+        height: 60vw;
+        width: 60vw;
+        margin-bottom: 20px;
+    }
+
+    .billede_produkt {
+        height: auto;
+        width: 100%;
+    }
+
+    .billede_produkt img {
+        width: 100%;
+        height: auto;
+    }
+
+    .label_produkt img {
+        height: 100%;
+        width: 100%;
+
+    }
+
+    .label_produkt {
+        width: 15%;
+        height: auto;
+        z-index: 3;
+        position: absolute;
+        padding: 15% 0 0 50%;
+    }
+
+    #article_produkt .overskrift {
+        position: absolute;
+        color: black;
+        opacity: 0.75;
+        z-index: 2;
+        display: grid;
+        justify-self: center;
+        align-self: flex-end;
+    }
+
+    #article_produkt .pris {
+        position: absolute;
+        color: black;
+        opacity: 0.5;
+        z-index: 2;
+        display: grid;
+        justify-self: center;
+        align-self: flex-end;
+        margin-top: 20px;
+    }
+
+    section#filtrering button {
+        height: 30px;
+        width: auto;
+        padding: 5px 15px;
+        margin: 5px 5px;
+        border-color: #5e6773;
+        color: #5e6773;
+        border-radius: 100px;
+        background-color: transparent;
+        display: inline-block;
+    }
+
+    section#filtrering {
+        margin-left: 5vw;
+        margin-right: 5vw;
+        padding-top: 60px;
+
+        width: 90vv;
+        height: 50px;
+        white-space: nowrap;
+        overflow: auto;
+
+    }
 
 }
 
@@ -1626,6 +2320,8 @@ p {
         height: 10vh;
         width: 100vw;
         position: fixed;
+        z-index: 4;
+        background-color: white;
     }
 
 
@@ -1938,6 +2634,709 @@ p {
 
     .kontakt_forhandlere {
         padding-bottom: 80px;
+
+    }
+
+    /*-------JOURNAL -----*/
+    #vaelg_inspiration {
+        padding-top: 3em;
+        height: 50vh;
+        width: 100vw;
+    }
+
+    #vaelg_inspiration .billede {
+        height: 80%;
+        width: 80%;
+        padding: 0 10%;
+    }
+
+    #vaelg_inspiration .billede img {
+        height: 100%;
+        width: 100%;
+
+    }
+
+
+    #vaelg_events {
+        padding-top: 3em;
+        height: 50vh;
+        width: 100vw;
+    }
+
+    #vaelg_events .billede {
+        height: 80%;
+        width: 80%;
+        padding: 0 10%;
+    }
+
+    #vaelg_events .billede img {
+        height: 100%;
+        width: 100%;
+
+    }
+
+
+    #vaelg_inspiration .tekst,
+    #vaelg_events .tekst {
+        text-align: center;
+        height: 20%;
+        padding-top: 35px;
+    }
+
+    /*-------OM-------*/
+    .om_tekst {
+        padding: 3em;
+    }
+
+    #om img {
+        width: 100vw;
+        height: auto;
+        padding-bottom: 3em;
+    }
+
+    /*-------INSPIRATION -----*/
+    #article_inspiration {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+    }
+
+    #article_inspiration .billede_inspiration {
+        height: auto;
+        width: 100vw;
+
+    }
+
+    .billede_inspiration img {
+        width: 100%;
+        height: auto;
+        padding-bottom: 2em;
+
+    }
+
+
+    #article_inspiration .overskrift {
+        position: absolute;
+        color: #ecd351;
+        z-index: 2;
+        display: grid;
+        justify-self: center;
+        align-self: center;
+    }
+
+
+    #article_inspiration:hover {}
+
+    /*------- MODAL INSPIRATION -----*/
+    #popup {
+        width: 100vw;
+        height: 100vh;
+        margin: 0;
+        background: rgba(255, 255, 255, .9);
+        position: fixed;
+        visibility: hidden;
+        z-index: 3;
+
+    }
+
+    #popup #close {
+        margin-left: 10px;
+        margin-top: 10px;
+    }
+
+    #popupindhold {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: 3;
+    }
+
+    #modal_article_inspiration {
+        width: 100%;
+        height: 100%;
+        display: grid;
+    }
+
+    .modal_billede_inspiration {
+        height: 90%;
+        width: 90%;
+        justify-self: center;
+        align-self: center;
+    }
+
+    .modal_billede_inspiration img {
+        height: auto;
+        width: 100%;
+
+    }
+
+    .modal_tekst_inspiration {
+        padding: 0 10%;
+    }
+
+
+
+
+    /*------- GAVEKORT -------*/
+    #gavekort {
+        height: 100vh;
+        width: 100wv;
+
+    }
+
+    .gavekort_beskrivelse {}
+
+    .gavekort_billede {
+        height: auto;
+        width: 80%;
+        padding-left: 40px;
+        padding-top: 100px;
+    }
+
+    .gavekort_billede img {
+        height: 100%;
+        width: 100%;
+    }
+
+    .dropbtn {
+        background-color: #818181;
+        color: white;
+        padding: 16px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+    }
+
+    .dropdown {
+        position: relative;
+        display: inline-block;
+        padding-left: 140px;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+    }
+
+    .dropdown-content p {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+    .dropdown-content p:hover {
+        background-color: #f1f1f1
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    .dropdown:hover .dropbtn {
+        background-color: #EED04F;
+    }
+
+    /*------ SHOP SINGLE ------*/
+    #article_produkt_single {
+        display: grid;
+        height: 100vh;
+        width: 100vw;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+    }
+
+    .billede_produkt_single {
+        width: 100vw;
+        height: auto;
+        grid-row: 1 / 2;
+        grid-column: 1 / 3;
+
+    }
+
+    .billede_produkt_single img {
+        width: 100%;
+        height: auto;
+
+    }
+
+    .label_produkt_single {
+        display: none;
+    }
+
+    .overskrift_produkt_single {
+        width: auto;
+        height: auto;
+        grid-row: 2 / 3;
+        grid-column: 1 / 3;
+        align-self: end;
+        padding: 1em;
+    }
+
+    .beskrivelse_produkt_single {
+        height: auto;
+        width: auto;
+        grid-column: 1 / 3;
+        grid-row: 3 / 4;
+        padding: 1em;
+    }
+
+    .dimensioner_produkt_single {
+        height: auto;
+        width: auto;
+        grid-column: 1 / 3;
+        grid-row: 4 / 5;
+        padding: 1em;
+    }
+
+    .pris_produkt_single {
+        height: auto;
+        width: auto;
+        grid-column: 1 / 2;
+        grid-row: 5 / 6;
+        text-align: center;
+        padding: 1em;
+        font-size: 1.5em;
+        padding: 0 1em 3em 1em;
+
+    }
+
+    #bestillingsknap {
+        width: 100%;
+        height: auto;
+        display: grid;
+        justify-self: end;
+        grid-column: 2 / 3;
+        grid-row: 5 / 6;
+
+    }
+
+    #bestillingsknap a {
+        font-size: 1.5em;
+        padding: 0 1em 3em 1em;
+
+    }
+
+    /*------ SHOP KØB ------*/
+    #infografik {
+        width: 90vw;
+        height: auto;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 1fr;
+        padding: 7vh 5vw 0 5vw;
+
+    }
+
+    .mine_oplysninger {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        display: grid;
+        justify-items: center;
+        align-items: center;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+
+    .motion_graphic_mine_oplysninger {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        border-radius: 100px;
+        height: 80px;
+        width: 80px;
+        display: grid;
+        justify-self: center;
+    }
+
+
+    .mine_oplysninger img {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        height: 80px;
+        width: 80px;
+    }
+
+    .mine_oplysninger p {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+        text-align: center;
+    }
+
+
+    .betaling {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+        display: grid;
+        justify-items: center;
+        align-items: center;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+
+    .motion_graphic_betaling {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        border-radius: 100px;
+        height: 80px;
+        width: 80px;
+        display: grid;
+        justify-self: center;
+    }
+
+    .betaling img {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        height: 80px;
+        width: 80px;
+    }
+
+    .betaling p {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+        text-align: center;
+    }
+
+    .godkendt {
+        grid-column: 3 / 4;
+        grid-row: 1 / 2;
+        display: grid;
+        justify-items: center;
+        align-items: center;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+
+    .motion_graphic_godkendt {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        border-radius: 100px;
+        height: 80px;
+        width: 80px;
+        display: grid;
+        justify-self: center;
+    }
+
+    .godkendt img {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        height: 80px;
+        width: 80px;
+    }
+
+    .godkendt p {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+        text-align: center;
+    }
+
+    .ordrebekraeftelse {
+        grid-column: 4 / 5;
+        grid-row: 1 / 2;
+        display: grid;
+        justify-items: center;
+        align-items: center;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+
+    .motion_graphic_ordrebekraeftelse {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        border-radius: 100px;
+        height: 80px;
+        width: 80px;
+        display: grid;
+        justify-self: center;
+    }
+
+    .ordrebekraeftelse img {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        height: 80px;
+        width: 80px;
+    }
+
+    .ordrebekraeftelse p {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+        text-align: center;
+    }
+
+    /*------ PIL INFOGRAFIK ------*/
+    #pil_infografik {
+        width: 90vw;
+        height: auto;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 1fr;
+        padding: 0 5vw;
+
+    }
+
+    .pil_indtast_oplysninger {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        height: 20px;
+        width: 25vw;
+    }
+
+    .pil_betaling {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+        height: 20px;
+        width: 25vw;
+    }
+
+    .pil_godkendt {
+        grid-column: 3 / 4;
+        grid-row: 1 / 2;
+        height: 20px;
+        width: 25vw;
+    }
+
+    .pil_ordrebekraeftelse {
+        grid-column: 4 / 5;
+        grid-row: 1 / 2;
+        height: 20px;
+        width: 25vw;
+    }
+
+    .pil_indtast_oplysninger img,
+    .pil_betaling img,
+    .pil_godkendt img,
+    .pil_ordrebekraeftelse img {
+        height: 100%;
+        width: 100%;
+    }
+
+    /*------MINE OPLYSNINGER SIDE, BETALINGSSIDE ------*/
+    #mine_oplysningerside,
+    #betalingsside,
+    #godkendtside,
+    #ordrebekraeftelseside {
+        height: auto;
+        width: 100vw;
+        background-color: #fcf5de;
+        padding-bottom: 5%;
+    }
+
+    #mine_oplysningerside h2,
+    #betalingsside h2,
+    #godkendtside h2,
+    #ordrebekraeftelseside h2 {
+        text-align: center;
+        padding: 30px;
+    }
+
+    #formular {}
+
+    input {
+        width: 100%;
+        height: 20px;
+        border-radius: 100px;
+        border: none;
+        padding: 8px 0;
+    }
+
+    textarea {
+        width: 100%;
+        border: none;
+        padding: 8px 0;
+    }
+
+    select {
+        width: 100%;
+        height: 40px;
+        padding: 8px 0;
+        background-color: white;
+        border: none;
+    }
+
+    input[type=text] {}
+
+    .indtastningsfelt {
+        padding: 20px 10%;
+    }
+
+    /*
+    .submit {
+        width: 20%;
+        height: 40px;
+        padding: 8px 0;
+        background-color: white;
+        border: none;
+    }
+*/
+    .payment {
+        height: auto;
+        width: 80%;
+        padding: 0 10%;
+    }
+
+    .payment img {
+        width: 100%;
+        height: auto;
+    }
+
+    .godkendt_tekst p {
+        text-align: center;
+        padding: 0 40px 40px 40px;
+    }
+
+    .ordrebekraeftelse_tekst p {
+        text-align: center;
+        padding: 0 40px 40px 40px;
+    }
+
+    .videre_knap {
+        height: auto;
+        width: 20vw;
+        margin: 0 10vw 0 70vw;
+        background-color: white;
+        border: none;
+        text-align: center;
+    }
+
+    .videre_knap p {
+        padding: 20px;
+    }
+
+    .videre_knap:hover {
+        background-color: #ecd351;
+    }
+
+
+    /*------ EVENTS ------*/
+    #article_event {
+        height: auto;
+        width: 100vw;
+        padding-bottom: 5vh;
+        padding-top: 7vh;
+        display: grid;
+        justify-items: center;
+        align-items: center;
+    }
+
+    .billede_event {
+        height: auto;
+        width: 80%;
+        margin-bottom: 20px;
+    }
+
+    #article_event img {
+        height: auto;
+        width: 100%;
+    }
+
+    #article_event .tekst_event {
+        display: grid;
+        justify-items: center;
+        width: 80vw;
+    }
+
+    #article_event .tekst_event h2 {
+        height: auto;
+        width: 100%;
+    }
+
+    #article_event .tekst_event h3 {
+        height: auto;
+        width: 100%;
+    }
+
+    #article_event .tekst_event p {
+        height: auto;
+        width: 100%;
+
+    }
+
+    /* ----- PRODUKTSIDE ----- */
+    #article_produkt {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        margin-bottom: 20px;
+    }
+
+    .parent_produkt {
+        display: grid;
+        align-items: center;
+        justify-items: center;
+        height: 60vw;
+        width: 60vw;
+        margin-bottom: 20px;
+    }
+
+    .billede_produkt {
+        height: auto;
+        width: 100%;
+    }
+
+    .billede_produkt img {
+        width: 100%;
+        height: auto;
+    }
+
+    .label_produkt img {
+        height: 100%;
+        width: 100%;
+
+    }
+
+    .label_produkt {
+        width: 15%;
+        height: auto;
+        z-index: 3;
+        position: absolute;
+        padding: 15% 0 0 50%;
+    }
+
+    #article_produkt .overskrift {
+        position: absolute;
+        color: black;
+        opacity: 0.75;
+        z-index: 2;
+        display: grid;
+        justify-self: center;
+        align-self: flex-end;
+    }
+
+    #article_produkt .pris {
+        position: absolute;
+        color: black;
+        opacity: 0.5;
+        z-index: 2;
+        display: grid;
+        justify-self: center;
+        align-self: flex-end;
+        margin-top: 20px;
+    }
+
+    section#filtrering button {
+        height: 30px;
+        width: auto;
+        padding: 5px 15px;
+        margin: 5px 5px;
+        border-color: #5e6773;
+        color: #5e6773;
+        border-radius: 100px;
+        background-color: transparent;
+        display: inline-block;
+    }
+
+    section#filtrering {
+        margin-left: 5vw;
+        margin-right: 5vw;
+        padding-top: 60px;
+
+        width: 90vv;
+        height: 50px;
+        white-space: nowrap;
+        overflow: auto;
 
     }
 }
