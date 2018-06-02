@@ -357,21 +357,29 @@ MOBIL:
 /*--------INSTAGALLERI --------*/
 
 #instagalleri .mobil {
-
     height: auto;
     width: 100%;
     padding-top: 1em;
     padding-bottom: 6em;
-
 }
 
+#instagalleri .mobil {
+    height: auto;
+    width: 100%;
+    padding-top: 1em;
+    padding-bottom: 6em;
+}
+
+
 #instagalleri {
-    text-align: center;
     padding: 1em;
+    width: 100vw;
+    height: auto;
 }
 
 .instagalleri_tekst {
     padding: 3em;
+    text-align: center;
 }
 
 #instagalleri .tablet {
