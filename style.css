@@ -224,33 +224,28 @@ p {
 
 
     /*-------JOURNAL -----*/
-    #vaelg_inspiration {
-        padding-top: 3em;
-        height: 50vh;
+    #vaelg_inspiration,
+    #vaelg_events {
+        margin-top: 8vh;
         width: 100vw;
+        margin-bottom: 8vh;
     }
 
     #vaelg_inspiration .billede {
-        height: 80%;
+        height: auto;
         width: 80%;
         padding: 0 10%;
+        padding-top: 20px;
     }
 
     #vaelg_inspiration .billede img {
         height: 100%;
         width: 100%;
-
     }
 
-
-    #vaelg_events {
-        padding-top: 3em;
-        height: 50vh;
-        width: 100vw;
-    }
 
     #vaelg_events .billede {
-        height: 80%;
+        height: auto;
         width: 80%;
         padding: 0 10%;
     }
@@ -258,7 +253,6 @@ p {
     #vaelg_events .billede img {
         height: 100%;
         width: 100%;
-
     }
 
 
@@ -280,6 +274,18 @@ p {
         padding-bottom: 3em;
     }
 
+    .video {
+        width: 100vw;
+        height: 56.25vw;
+        padding-top: 60px;
+    }
+
+
+    iframe {
+        width: 100%;
+        height: 100%;
+
+    }
 
     /*-------KONTAKT-------*/
     .map {
@@ -1134,7 +1140,7 @@ p {
         display: grid;
         justify-self: center;
         align-self: flex-end;
-        margin-top: 20px;
+        margin-top: 30px;
     }
 
     section#filtrering button {
@@ -1153,8 +1159,7 @@ p {
         margin-left: 5vw;
         margin-right: 5vw;
         padding-top: 60px;
-
-        width: 90vv;
+        width: 90vw;
         height: 50px;
         white-space: nowrap;
         overflow: auto;
@@ -1257,31 +1262,44 @@ p {
     }
 
 
-    /*-------JOURNAL-------*/
-    #vaelg_inspiration {
-        padding-top: 3em;
-        margin: 4em;
-        height: 50vw;
-        width: 80vw;
-    }
-
+    /*-------JOURNAL -----*/
+    #vaelg_inspiration,
     #vaelg_events {
-        padding: 3m;
-        margin: 4em;
-        height: 50vw;
-        width: 80vw;
-        padding-bottom: 7em;
+        margin-top: 8vh;
+        width: 100vw;
+        margin-bottom: 8vh;
     }
 
-    .billede {
+    #vaelg_inspiration .billede {
+        height: auto;
+        width: 80%;
+        padding: 0 10%;
+        padding-top: 20px;
+    }
+
+    #vaelg_inspiration .billede img {
         height: 100%;
         width: 100%;
-        padding: 1em;
-
     }
 
-    .tekst {
+
+    #vaelg_events .billede {
+        height: auto;
+        width: 80%;
+        padding: 0 10%;
+    }
+
+    #vaelg_events .billede img {
+        height: 100%;
+        width: 100%;
+    }
+
+
+    #vaelg_inspiration .tekst,
+    #vaelg_events .tekst {
         text-align: center;
+        height: 20%;
+        padding-top: 35px;
     }
 
 
@@ -1327,8 +1345,23 @@ p {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
         grid-template-rows: 1fr 1fr 1fr 1fr;
-        padding: 5vh 10vw;
+        margin: 0 auto;
     }
+
+    .video {
+        width: 100vw;
+        height: 56.25vw;
+        padding-top: 60px;
+
+    }
+
+
+    iframe {
+        width: 100%;
+        height: 100%;
+
+    }
+
 
 
     /* ----- FOOTER ----- */
@@ -2136,19 +2169,30 @@ p {
     }
 
     /* ----- PRODUKTSIDE ----- */
+    #display {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-content: center;
+        max-width: 1024px;
+        margin: 0 auto;
+    }
+
     #article_produkt {
         display: flex;
         justify-content: center;
         align-content: center;
         margin-bottom: 20px;
+        flex-basis: 300px;
+        margin-bottom: 60px;
     }
 
     .parent_produkt {
         display: grid;
         align-items: center;
         justify-items: center;
-        height: 60vw;
-        width: 60vw;
+        height: 40vw;
+        width: 40vw;
         margin-bottom: 20px;
     }
 
@@ -2165,15 +2209,14 @@ p {
     .label_produkt img {
         height: 100%;
         width: 100%;
-
     }
 
     .label_produkt {
-        width: 15%;
+        width: 10%;
         height: auto;
         z-index: 3;
         position: absolute;
-        padding: 15% 0 0 50%;
+        padding: 3% 0 0 25%;
     }
 
     #article_produkt .overskrift {
@@ -2194,7 +2237,7 @@ p {
         display: grid;
         justify-self: center;
         align-self: flex-end;
-        margin-top: 20px;
+        margin-top: 30px;
     }
 
     section#filtrering button {
@@ -2213,12 +2256,10 @@ p {
         margin-left: 5vw;
         margin-right: 5vw;
         padding-top: 60px;
-
-        width: 90vv;
+        width: 90vw;
         height: 50px;
         white-space: nowrap;
         overflow: auto;
-
     }
 
 }
@@ -2566,7 +2607,11 @@ p {
 
     /*------- SHOP KATEGORI -------*/
     #kategorier {
+        height: 80vh;
+        width: 100vw;
         display: grid;
+        justify-self: center;
+        align-self: center;
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
         grid-template-rows: 1fr 1fr;
     }
@@ -2656,14 +2701,22 @@ p {
     }
 
     /*-------JOURNAL -----*/
-    #vaelg_inspiration {
-        padding-top: 3em;
-        height: 50vh;
-        width: 100vw;
+    #vaelg {
+        width: 90vw;
+        height: 80vh;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        justify-self: center;
+        align-items: center;
+        padding: 0 5vw;
     }
 
+    #vaelg_inspiration,
+    #vaelg_events {}
+
     #vaelg_inspiration .billede {
-        height: 80%;
+        height: auto;
         width: 80%;
         padding: 0 10%;
     }
@@ -2671,18 +2724,11 @@ p {
     #vaelg_inspiration .billede img {
         height: 100%;
         width: 100%;
-
     }
 
-
-    #vaelg_events {
-        padding-top: 3em;
-        height: 50vh;
-        width: 100vw;
-    }
 
     #vaelg_events .billede {
-        height: 80%;
+        height: auto;
         width: 80%;
         padding: 0 10%;
     }
@@ -2690,7 +2736,6 @@ p {
     #vaelg_events .billede img {
         height: 100%;
         width: 100%;
-
     }
 
 
@@ -2701,16 +2746,78 @@ p {
         padding-top: 35px;
     }
 
-    /*-------OM-------*/
-    .om_tekst {
-        padding: 3em;
+    /* ----- OM ----- */
+    #om {
+        position: relative;
+        height: auto;
+        width: 100vw;
+        display: grid;
+        justify-items: center;
+        align-items: center;
     }
 
-    #om img {
-        width: 100vw;
-        height: auto;
-        padding-bottom: 3em;
+    #om .blok_element {
+        padding-top: 20vh;
+        height: 50vh;
+        width: 60vw;
+        position: relative;
+        margin-top: 10vh;
     }
+
+    .om_tekst {
+        padding: 3em;
+        position: relative;
+        z-index: 2;
+        /*        padding: 30em 10em 2em 20em;*/
+        color: white;
+        height: auto;
+        width: 80%;
+        bottom: 0;
+        right: 0;
+        display: grid;
+        justify-self: end;
+    }
+
+    .om_tekst p {
+        background-color: #ecd351;
+        padding: 0 1em 1em 1em;
+
+
+    }
+
+    .om_tekst h2 {
+        background-color: #ecd351;
+        padding: 0.5em 0.5em 0 0.5em;
+    }
+
+
+    #om img {
+        width: 40%;
+        height: auto;
+        position: absolute;
+        top: 0;
+        left: 0;
+        /*        padding: 5em 0 5em 12em;*/
+    }
+
+
+
+    .video {
+        padding-top: 20vh;
+        width: 50vw;
+        height: 25.13vw;
+        padding-left: 10vw;
+        position: relative;
+
+    }
+
+
+    iframe {
+        width: 100%;
+        height: 100%;
+
+    }
+
 
     /*-------INSPIRATION -----*/
     #article_inspiration {
@@ -3273,19 +3380,31 @@ p {
     }
 
     /* ----- PRODUKTSIDE ----- */
+    #display {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-content: center;
+        max-width: 2560px;
+        margin: 0 auto;
+    }
+
     #article_produkt {
         display: flex;
+        align-self: center;
         justify-content: center;
         align-content: center;
         margin-bottom: 20px;
+        flex-basis: 600px;
+        margin-bottom: 60px;
     }
 
     .parent_produkt {
         display: grid;
         align-items: center;
         justify-items: center;
-        height: 60vw;
-        width: 60vw;
+        height: 26vw;
+        width: 26vw;
         margin-bottom: 20px;
     }
 
@@ -3302,15 +3421,14 @@ p {
     .label_produkt img {
         height: 100%;
         width: 100%;
-
     }
 
     .label_produkt {
-        width: 15%;
+        width: 7.5%;
         height: auto;
         z-index: 3;
         position: absolute;
-        padding: 15% 0 0 50%;
+        padding: 4% 0 0 18%;
     }
 
     #article_produkt .overskrift {
@@ -3331,7 +3449,7 @@ p {
         display: grid;
         justify-self: center;
         align-self: flex-end;
-        margin-top: 20px;
+        margin-top: 30px;
     }
 
     section#filtrering button {
@@ -3350,11 +3468,9 @@ p {
         margin-left: 5vw;
         margin-right: 5vw;
         padding-top: 60px;
-
-        width: 90vv;
+        width: 90vw;
         height: 50px;
         white-space: nowrap;
         overflow: auto;
-
     }
 }
