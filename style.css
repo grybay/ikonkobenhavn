@@ -692,6 +692,10 @@ footer .postnummer,
 
 
     /*------ SHOP KATEGORI ------*/
+    .produkterside {
+        margin-bottom: 100px;
+    }
+
     .cube img,
     .coffeetable img,
     .shortcoffeetable img,
