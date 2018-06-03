@@ -16,6 +16,7 @@ a {
     font-size: 1em;
     text-decoration: none;
     color: black;
+    text-transform: uppercase;
 
 }
 
@@ -23,25 +24,50 @@ h2 {
     font-family: Helvetica Neue;
     font-weight: 100;
     font-size: 2.5em;
+    letter-spacing: 2px;
 }
 
 h3 {
     font-family: Helvetica Neue;
     font-weight: 100;
     font-size: 2em;
+    letter-spacing: 2px;
+}
+
+h4 {
+    font-family: Helvetica Neue;
+    font-weight: 200;
+    font-size: 1.5em;
+    letter-spacing: 1px;
 }
 
 p {
     font-family: Helvetica Neue;
     font-weight: 300;
     font-size: 1em;
+    letter-spacing: 0.5px;
 }
 
 footer p {
     font-family: Helvetica Neue;
     font-weight: 500;
-    color: #dfd1d7;
     font-size: 0.9em;
+    letter-spacing: 0.5px;
+}
+
+footer a {
+    color: #dfd1d7;
+}
+
+footer a:hover {
+    color: #ecd351;
+}
+
+footer .gade,
+footer .virksomhed,
+footer .postnummer,
+#cvrnummer_footer {
+    color: #dfd1d7;
 }
 
 
@@ -95,13 +121,13 @@ footer p {
         margin-bottom: 10vh;
         text-align: center;
         z-index: 4;
-
-        font-family: 'Open Sans', sans-serif;
-        font-size: 1em;
         text-transform: uppercase;
-        letter-spacing: 5px;
         text-decoration: none;
         color: #354150;
+        font-family: Helvetica Neue;
+        letter-spacing: 5px;
+        font-weight: 200;
+        font-size: 1em;
     }
 
     /* rotate forst bar */
@@ -366,7 +392,6 @@ footer p {
         justify-self: center;
         align-self: center;
         text-align: right;
-        font-size: 0.75rem;
         background-color: #ecd351;
         padding: 5px 7px;
     }
@@ -452,12 +477,8 @@ footer p {
         width: 80%;
     }
 
-    .modal_tekst_inspiration h2 {
-        font-size: 1.2rem;
-    }
-    .modal_tekst_inspiration p {
-        font-size: 1rem;
-    }
+    .modal_tekst_inspiration h2 {}
+    .modal_tekst_inspiration p {}
 
 
 
@@ -669,47 +690,6 @@ footer p {
         align-self: end;
     }
 
-    #cvrnummer_footer a {
-        color: black
-    }
-
-    #cvrnummer_footer a:hover {
-        color: #EED04F;
-    }
-
-
-    #privatpolitik_footer a {
-        color: black
-    }
-
-    #privatpolitik_footer a:hover {
-        color: #EED04F;
-    }
-
-    #gavekort_footer a {
-        color: black
-    }
-
-    #gavekort_footer a:hover {
-        color: #EED04F;
-    }
-
-    #forsendelseogretur_footer a {
-        color: black
-    }
-
-    #forsendelseogretur_footer a:hover {
-        color: #EED04F;
-    }
-
-    #reglerogvilkaar_footer a {
-        color: black;
-    }
-
-    #reglerogvilkaar_footer a:hover {
-        color: #EED04F;
-    }
-
 
     /*------ SHOP KATEGORI ------*/
     .cube img,
@@ -794,7 +774,6 @@ footer p {
         grid-column: 1 / 2;
         grid-row: 5 / 6;
         padding: 1em;
-        font-size: 1.5em;
         padding: 0 30px 30px 30px;
 
     }
@@ -866,7 +845,6 @@ footer p {
         grid-column: 1 / 2;
         grid-row: 2 / 3;
         text-align: center;
-        font-size: 0.8em;
     }
 
 
@@ -901,7 +879,6 @@ footer p {
         grid-column: 1 / 2;
         grid-row: 2 / 3;
         text-align: center;
-        font-size: 0.8em;
     }
 
     .godkendt {
@@ -935,7 +912,6 @@ footer p {
         grid-column: 1 / 2;
         grid-row: 2 / 3;
         text-align: center;
-        font-size: 0.8em;
     }
 
     .ordrebekraeftelse {
@@ -969,7 +945,6 @@ footer p {
         grid-column: 1 / 2;
         grid-row: 2 / 3;
         text-align: center;
-        font-size: 0.8em;
     }
 
     /*------ PIL INFOGRAFIK ------*/
@@ -1145,17 +1120,14 @@ footer p {
     }
 
     #article_event .tekst_event h2 {
-        font-size: 1.2rem;
         text-align: left;
     }
 
     #article_event .tekst_event h3 {
-        font-size: 1rem;
         text-align: left;
     }
 
     #article_event .tekst_event p {
-        font-size: 0.8rem;
         text-align: left;
     }
 
@@ -1602,13 +1574,13 @@ footer p {
         margin-bottom: 10vh;
         text-align: center;
         z-index: 4;
-
-        font-family: 'Open Sans', sans-serif;
-        font-size: 1em;
         text-transform: uppercase;
-        letter-spacing: 5px;
         text-decoration: none;
         color: #354150;
+        font-family: Helvetica Neue;
+        letter-spacing: 5px;
+        font-weight: 200;
+        font-size: 1em;
     }
 
     /* rotate forst bar */
@@ -1710,7 +1682,6 @@ footer p {
         justify-self: center;
         align-self: center;
         text-align: right;
-        font-size: 1rem;
         background-color: #ecd351;
         padding: 5px 7px
     }
@@ -1760,13 +1731,8 @@ footer p {
         max-width: 60%;
     }
 
-    .modal_tekst_inspiration h2 {
-        font-size: 1.2rem;
-    }
-    .modal_tekst_inspiration p {
-        font-size: 1rem;
-
-    }
+    .modal_tekst_inspiration h2 {}
+    .modal_tekst_inspiration p {}
 
     /*------- GAVEKORT -------*/
     #gavekort {
@@ -1963,7 +1929,6 @@ footer p {
         grid-column: 1 / 2;
         grid-row: 7 / 8;
         padding: 1em;
-        font-size: 1.5em;
         padding: 0 30px 30px 30px;
 
     }
@@ -1982,7 +1947,6 @@ footer p {
 
     }
 
-    #bestillingsknap a {}
 
 
 
@@ -2325,17 +2289,14 @@ footer p {
     }
 
     #article_event .tekst_event h2 {
-        font-size: 1.2rem;
         text-align: left;
     }
 
     #article_event .tekst_event h3 {
-        font-size: 1rem;
         text-align: left;
     }
 
     #article_event .tekst_event p {
-        font-size: 0.8rem;
         text-align: left;
     }
 
@@ -2548,6 +2509,10 @@ footer p {
 
     #menu_open a {
         margin-bottom: 0vh;
+        font-family: Helvetica Neue;
+        letter-spacing: 5px;
+        font-weight: 200;
+        font-size: 1em;
     }
 
     #menu_open {
@@ -3033,7 +2998,6 @@ footer p {
         justify-self: center;
         align-self: center;
         text-align: right;
-        font-size: 1.5rem;
         background-color: #ecd351;
         padding: 5px 7px
     }
@@ -3081,12 +3045,8 @@ footer p {
         text-align: center;
     }
 
-    .modal_tekst_inspiration h2 {
-        font-size: 1.2rem;
-    }
-    .modal_tekst_inspiration p {
-        font-size: 1rem;
-    }
+    .modal_tekst_inspiration h2 {}
+    .modal_tekst_inspiration p {}
 
 
 
@@ -3263,7 +3223,6 @@ footer p {
         grid-column: 3 / 4;
         grid-row: 4 / 5;
         padding: 1em;
-        font-size: 1.5em;
         padding: 0 30px 30px 30px;
 
     }
@@ -3623,17 +3582,14 @@ footer p {
     }
 
     #article_event .tekst_event h2 {
-        font-size: 1.2rem;
         text-align: left;
     }
 
     #article_event .tekst_event h3 {
-        font-size: 1rem;
         text-align: left;
     }
 
     #article_event .tekst_event p {
-        font-size: 0.8rem;
         text-align: left;
     }
 
