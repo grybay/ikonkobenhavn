@@ -87,6 +87,7 @@ footer .postnummer,
         max-width: 0px;
         max-height: 0px;
         overflow: hidden;
+        -webkit-transition: max-width 0.6s;
         transition: max-width 0.6s;
         z-index: 4;
     }
@@ -118,7 +119,10 @@ footer .postnummer,
         height: 100vh;
         width: 100vw;
         display: grid;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
         justify-content: center;
+        -ms-flex-line-pack: center;
         align-content: center;
         z-index: 4;
 
@@ -139,6 +143,7 @@ footer .postnummer,
 
     /* rotate forst bar */
     .change .bar1 {
+        -webkit-transform: rotate(-45deg) translate(-9px, 3px);
         transform: rotate(-45deg) translate(-9px, 3px);
     }
 
@@ -149,6 +154,7 @@ footer .postnummer,
 
     /* rotate last bar */
     .change .bar3 {
+        -webkit-transform: rotate(45deg) translate(-6px, -2px);
         transform: rotate(45deg) translate(-6px, -2px);
     }
 
@@ -174,6 +180,7 @@ footer .postnummer,
         height: 3px;
         background-color: #5e6773;
         margin: 4px 0;
+        -webkit-transition: 0.4s;
         transition: 0.4s;
     }
 
@@ -204,10 +211,23 @@ footer .postnummer,
     }
 
     .splash_cycle {
+        -webkit-animation-name: splash_cycle_kf;
         animation-name: splash_cycle_kf;
+        -webkit-animation-duration: 15s;
         animation-duration: 15s;
+        -webkit-animation-timing-function: steps(7);
         animation-timing-function: steps(7);
+        -webkit-animation-iteration-count: infinite;
         animation-iteration-count: infinite;
+    }
+
+    @-webkit-keyframes splash_cycle_kf {
+        from {
+            background-position: 0% -100%;
+        }
+        to {
+            background-position: -700% -100%;
+        }
     }
 
     @keyframes splash_cycle_kf {
@@ -234,6 +254,7 @@ footer .postnummer,
         width: 55%;
         height: auto;
         justify-self: center;
+        -ms-flex-item-align: center;
         align-self: center;
 
     }
@@ -371,8 +392,13 @@ footer .postnummer,
 
     /*-------INSPIRATION -----*/
     #article_inspiration {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
         justify-content: center;
+        -ms-flex-line-pack: center;
         align-content: center;
         width: 60vw;
         margin: 20% auto 0;
@@ -517,6 +543,7 @@ footer .postnummer,
         height: auto;
         grid-row: 2 / 3;
         grid-column: 1 / 3;
+        -ms-flex-item-align: end;
         align-self: end;
         padding: 30px;
     }
@@ -551,6 +578,7 @@ footer .postnummer,
         display: none;
         position: absolute;
         background-color: #f9f9f9;
+        -webkit-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
         box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     }
 
@@ -670,30 +698,35 @@ footer .postnummer,
     #cvrnummer_footer {
         grid-column: 4 / 5;
         grid-row: 4 / 5;
+        -ms-flex-item-align: end;
         align-self: end;
     }
 
     #privatpolitik_footer {
         grid-column: 1 / 2;
         grid-row: 2 / 3;
+        -ms-flex-item-align: center;
         align-self: center;
     }
 
     #gavekort_footer {
         grid-column: 1 / 2;
         grid-row: 1 / 2;
+        -ms-flex-item-align: start;
         align-self: start;
     }
 
     #forsendelseogretur_footer {
         grid-column: 1 / 2;
         grid-row: 3 / 4;
+        -ms-flex-item-align: center;
         align-self: center;
     }
 
     #reglerogvilkaar_footer {
         grid-column: 1 / 2;
         grid-row: 4 / 5;
+        -ms-flex-item-align: end;
         align-self: end;
     }
 
@@ -759,6 +792,7 @@ footer .postnummer,
         height: auto;
         grid-row: 2 / 3;
         grid-column: 1 / 3;
+        -ms-flex-item-align: end;
         align-self: end;
         padding: 30px;
     }
@@ -829,6 +863,8 @@ footer .postnummer,
         grid-row: 1 / 2;
         display: grid;
         justify-items: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 1fr;
@@ -864,6 +900,8 @@ footer .postnummer,
         grid-row: 1 / 2;
         display: grid;
         justify-items: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 1fr;
@@ -897,6 +935,8 @@ footer .postnummer,
         grid-row: 1 / 2;
         display: grid;
         justify-items: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 1fr;
@@ -930,6 +970,8 @@ footer .postnummer,
         grid-row: 1 / 2;
         display: grid;
         justify-items: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 1fr;
@@ -1110,6 +1152,8 @@ footer .postnummer,
         width: 100vw;
         display: grid;
         justify-items: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
         margin: 80px auto;
     }
@@ -1144,14 +1188,21 @@ footer .postnummer,
 
     /* ----- PRODUKTSIDE ----- */
     #article_produkt {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
         justify-content: center;
+        -ms-flex-line-pack: center;
         align-content: center;
         margin-bottom: 20px;
     }
 
     .parent_produkt {
         display: grid;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
         justify-items: center;
         height: 60vw;
@@ -1261,10 +1312,23 @@ footer .postnummer,
     }
 
     .splash_cycle {
+        -webkit-animation-name: splash_cycle_kf;
         animation-name: splash_cycle_kf;
+        -webkit-animation-duration: 15s;
         animation-duration: 15s;
+        -webkit-animation-timing-function: steps(7);
         animation-timing-function: steps(7);
+        -webkit-animation-iteration-count: infinite;
         animation-iteration-count: infinite;
+    }
+
+    @-webkit-keyframes splash_cycle_kf {
+        from {
+            background-position: 0% -100%;
+        }
+        to {
+            background-position: -700% -100%;
+        }
     }
 
     @keyframes splash_cycle_kf {
@@ -1299,6 +1363,7 @@ footer .postnummer,
         width: 35%;
         height: auto;
         justify-self: center;
+        -ms-flex-item-align: center;
         align-self: center;
     }
 
@@ -1507,30 +1572,35 @@ footer .postnummer,
     #cvrnummer_footer {
         grid-column: 4 / 5;
         grid-row: 4 / 5;
+        -ms-flex-item-align: end;
         align-self: end;
     }
 
     #privatpolitik_footer {
         grid-column: 1 / 2;
         grid-row: 2 / 3;
+        -ms-flex-item-align: center;
         align-self: center;
     }
 
     #gavekort_footer {
         grid-column: 1 / 2;
         grid-row: 1 / 2;
+        -ms-flex-item-align: start;
         align-self: start;
     }
 
     #forsendelseogretur_footer {
         grid-column: 1 / 2;
         grid-row: 3 / 4;
+        -ms-flex-item-align: center;
         align-self: center;
     }
 
     #reglerogvilkaar_footer {
         grid-column: 1 / 2;
         grid-row: 4 / 5;
+        -ms-flex-item-align: end;
         align-self: end;
     }
 
@@ -1540,6 +1610,7 @@ footer .postnummer,
         max-width: 0px;
         max-height: 0px;
         overflow: hidden;
+        -webkit-transition: max-width 0.6s;
         transition: max-width 0.6s;
         z-index: 4;
     }
@@ -1572,7 +1643,10 @@ footer .postnummer,
         height: 100vh;
         width: 100vw;
         display: grid;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
         justify-content: center;
+        -ms-flex-line-pack: center;
         align-content: center;
         z-index: 4;
 
@@ -1593,6 +1667,7 @@ footer .postnummer,
 
     /* rotate forst bar */
     .change .bar1 {
+        -webkit-transform: rotate(-45deg) translate(-9px, 3px);
         transform: rotate(-45deg) translate(-9px, 3px);
     }
 
@@ -1603,6 +1678,7 @@ footer .postnummer,
 
     /* rotate last bar */
     .change .bar3 {
+        -webkit-transform: rotate(45deg) translate(-6px, -2px);
         transform: rotate(45deg) translate(-6px, -2px);
     }
 
@@ -1628,6 +1704,7 @@ footer .postnummer,
         height: 3px;
         background-color: #5e6773;
         margin: 4px 0;
+        -webkit-transition: 0.4s;
         transition: 0.4s;
     }
 
@@ -1661,8 +1738,13 @@ footer .postnummer,
 
     /*-------INSPIRATION -----*/
     #article_inspiration {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
         justify-content: center;
+        -ms-flex-line-pack: center;
         align-content: center;
         width: 100vw;
         margin: 100px auto 0;
@@ -1773,6 +1855,7 @@ footer .postnummer,
         height: auto;
         grid-row: 2 / 3;
         grid-column: 1 / 3;
+        -ms-flex-item-align: end;
         align-self: end;
         padding: 30px;
     }
@@ -1807,6 +1890,7 @@ footer .postnummer,
         display: none;
         position: absolute;
         background-color: #f9f9f9;
+        -webkit-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
         box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     }
 
@@ -1911,6 +1995,7 @@ footer .postnummer,
         height: auto;
         grid-row: 4 / 5;
         grid-column: 1 / 3;
+        -ms-flex-item-align: end;
         align-self: end;
         padding: 30px;
     }
@@ -1978,6 +2063,8 @@ footer .postnummer,
         grid-row: 1 / 2;
         display: grid;
         justify-items: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 1fr;
@@ -2013,6 +2100,8 @@ footer .postnummer,
         grid-row: 1 / 2;
         display: grid;
         justify-items: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 1fr;
@@ -2046,6 +2135,8 @@ footer .postnummer,
         grid-row: 1 / 2;
         display: grid;
         justify-items: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 1fr;
@@ -2079,6 +2170,8 @@ footer .postnummer,
         grid-row: 1 / 2;
         display: grid;
         justify-items: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 1fr;
@@ -2276,6 +2369,8 @@ footer .postnummer,
         width: 100vw;
         display: grid;
         justify-items: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
         margin: 80px auto;
     }
@@ -2310,25 +2405,39 @@ footer .postnummer,
 
     /* ----- PRODUKTSIDE ----- */
     #display {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -ms-flex-wrap: wrap;
         flex-wrap: wrap;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
         justify-content: center;
+        -ms-flex-line-pack: center;
         align-content: center;
         max-width: 1024px;
         margin: 0 auto;
     }
 
     #article_produkt {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
         justify-content: center;
+        -ms-flex-line-pack: center;
         align-content: center;
         margin-bottom: 20px;
+        -ms-flex-preferred-size: 300px;
         flex-basis: 300px;
         margin-bottom: 60px;
     }
 
     .parent_produkt {
         display: grid;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
         justify-items: center;
         height: 40vw;
@@ -2440,10 +2549,23 @@ footer .postnummer,
     }
 
     .splash_cycle {
+        -webkit-animation-name: splash_cycle_kf;
         animation-name: splash_cycle_kf;
+        -webkit-animation-duration: 15s;
         animation-duration: 15s;
+        -webkit-animation-timing-function: steps(7);
         animation-timing-function: steps(7);
+        -webkit-animation-iteration-count: infinite;
         animation-iteration-count: infinite;
+    }
+
+    @-webkit-keyframes splash_cycle_kf {
+        from {
+            background-position: 0% -100%;
+        }
+        to {
+            background-position: -700% -100%;
+        }
     }
 
     @keyframes splash_cycle_kf {
@@ -2526,6 +2648,8 @@ footer .postnummer,
     #menu_open {
         display: grid;
         justify-items: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
         grid-template-columns: 1fr, 1fr, 1fr, 1fr, 1fr;
         grid-template-rows: 1fr;
@@ -2561,6 +2685,7 @@ footer .postnummer,
         grid-column: 2 / 3;
         grid-row: 1 / 2;
         justify-self: center;
+        -ms-flex-item-align: center;
         align-self: center;
     }
 
@@ -2568,6 +2693,7 @@ footer .postnummer,
         grid-column: 3 / 4;
         grid-row: 1 / 2;
         justify-self: center;
+        -ms-flex-item-align: center;
         align-self: center;
     }
 
@@ -2575,6 +2701,7 @@ footer .postnummer,
         grid-column: 4 / 5;
         grid-row: 1 / 2;
         justify-self: center;
+        -ms-flex-item-align: center;
         align-self: center;
     }
 
@@ -2582,6 +2709,7 @@ footer .postnummer,
         grid-column: 5 / 6;
         grid-row: 1 / 2;
         justify-self: center;
+        -ms-flex-item-align: center;
         align-self: center;
     }
 
@@ -2674,12 +2802,14 @@ footer .postnummer,
     .virksomhed {
         grid-row: 1 / 2;
         grid-column: 1 / 2;
+        -ms-flex-item-align: end;
         align-self: end;
     }
 
     .gade {
         grid-column: 1 / 2;
         grid-row: 2 / 3;
+        -ms-flex-item-align: end;
         align-self: end;
     }
 
@@ -2691,6 +2821,7 @@ footer .postnummer,
     #cvrnummer_footer {
         grid-column: 4 / 5;
         grid-row: 4 / 5;
+        -ms-flex-item-align: end;
         align-self: end;
     }
 
@@ -2705,24 +2836,28 @@ footer .postnummer,
     #privatpolitik_footer {
         grid-column: 1 / 2;
         grid-row: 2 / 3;
+        -ms-flex-item-align: end;
         align-self: end;
     }
 
     #gavekort_footer {
         grid-column: 1 / 2;
         grid-row: 1 / 2;
+        -ms-flex-item-align: end;
         align-self: end;
     }
 
     #forsendelseogretur_footer {
         grid-column: 1 / 2;
         grid-row: 3 / 4;
+        -ms-flex-item-align: end;
         align-self: end;
     }
 
     #reglerogvilkaar_footer {
         grid-column: 1 / 2;
         grid-row: 4 / 5;
+        -ms-flex-item-align: end;
         align-self: end;
     }
 
@@ -2779,6 +2914,8 @@ footer .postnummer,
         width: 100vw;
         display: grid;
         justify-items: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
 
     }
@@ -2830,6 +2967,8 @@ footer .postnummer,
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr;
         justify-self: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
         padding: 0 5vw;
     }
@@ -2875,6 +3014,8 @@ footer .postnummer,
         width: 100vw;
         display: grid;
         justify-items: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
 
         background-image: url(filer/grid_mobil.png);
@@ -2948,8 +3089,13 @@ footer .postnummer,
 
     /*-------INSPIRATION -----*/
     #article_inspiration {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
         justify-content: center;
+        -ms-flex-line-pack: center;
         align-content: center;
         width: 100vw;
         margin: 200px auto 0;
@@ -3058,6 +3204,7 @@ footer .postnummer,
         height: auto;
         grid-row: 1 / 2;
         grid-column: 3 / 5;
+        -ms-flex-item-align: end;
         align-self: end;
         padding: 30px;
     }
@@ -3092,6 +3239,7 @@ footer .postnummer,
         display: none;
         position: absolute;
         background-color: #f9f9f9;
+        -webkit-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
         box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     }
 
@@ -3173,6 +3321,7 @@ footer .postnummer,
         height: auto;
         grid-row: 1 / 2;
         grid-column: 3 / 5;
+        -ms-flex-item-align: end;
         align-self: end;
         padding: 30px;
     }
@@ -3207,6 +3356,8 @@ footer .postnummer,
     #bestillingsknap {
         justify-self: end;
         display: grid;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
         background-color: #cdcdcd;
         text-align: center;
@@ -3242,6 +3393,8 @@ footer .postnummer,
         grid-row: 1 / 2;
         display: grid;
         justify-items: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 1fr;
@@ -3277,6 +3430,8 @@ footer .postnummer,
         grid-row: 1 / 2;
         display: grid;
         justify-items: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 1fr;
@@ -3310,6 +3465,8 @@ footer .postnummer,
         grid-row: 1 / 2;
         display: grid;
         justify-items: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 1fr;
@@ -3343,6 +3500,8 @@ footer .postnummer,
         grid-row: 1 / 2;
         display: grid;
         justify-items: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 1fr;
@@ -3571,26 +3730,41 @@ footer .postnummer,
 
     /* ----- PRODUKTSIDE ----- */
     #display {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -ms-flex-wrap: wrap;
         flex-wrap: wrap;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
         justify-content: center;
+        -ms-flex-line-pack: center;
         align-content: center;
         max-width: 2560px;
         margin: 0 auto;
     }
 
     #article_produkt {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -ms-flex-item-align: center;
         align-self: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
         justify-content: center;
+        -ms-flex-line-pack: center;
         align-content: center;
         margin-bottom: 20px;
+        -ms-flex-preferred-size: 600px;
         flex-basis: 600px;
         margin-bottom: 60px;
     }
 
     .parent_produkt {
         display: grid;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
         justify-items: center;
         height: 26vw;
