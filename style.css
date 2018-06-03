@@ -41,7 +41,8 @@ h4 {
     letter-spacing: 1px;
 }
 
-p {
+p,
+label {
     font-family: Helvetica Neue;
     font-weight: 300;
     font-size: 1em;
@@ -738,7 +739,7 @@ footer .postnummer,
 
     .cube img,
     .coffeetable img,
-    .shortcoffeetable img,
+    .shortconsoletable img,
     .longconsoletable img {
         height: auto;
         width: 40%;
@@ -746,7 +747,7 @@ footer .postnummer,
 
     .cube,
     .coffeetable,
-    .shortcoffeetable,
+    .shortconsoletable,
     .longconsoletable {
         padding-top: 100px;
         text-align: center;
@@ -1093,7 +1094,7 @@ footer .postnummer,
 
     input[type=text] {}
 
-    #indtastningsfelt {
+    .indtastningsfelt {
         padding: 20px 10%;
     }
 
@@ -1939,7 +1940,7 @@ footer .postnummer,
     /*------ SHOP KATEGORI ------*/
     .cube img,
     .coffeetable img,
-    .shortcoffeetable img,
+    .shortconsoletable img,
     .longconsoletable img {
         height: auto;
         width: 40%;
@@ -1947,7 +1948,7 @@ footer .postnummer,
 
     .cube,
     .coffeetable,
-    .shortcoffeetable,
+    .shortconsoletable,
     .longconsoletable {
         padding-top: 100px;
         text-align: center;
@@ -2308,7 +2309,7 @@ footer .postnummer,
 
     input[type=text] {}
 
-    #indtastningsfelt {
+    .indtastningsfelt {
         padding: 20px 30px;
     }
 
@@ -2875,7 +2876,7 @@ footer .postnummer,
 
     .cube img,
     .coffeetable img,
-    .shortcoffeetable img,
+    .shortconsoletable img,
     .longconsoletable img {
         width: 250px;
         height: auto;
@@ -2896,7 +2897,7 @@ footer .postnummer,
         padding-top: 50px;
     }
 
-    .shortcoffeetable {
+    .shortconsoletable {
         grid-column: 2 / 4;
         grid-row: 2 / 3;
         text-align: center;
@@ -3637,7 +3638,7 @@ footer .postnummer,
 
     input[type=text] {}
 
-    #indtastningsfelt {
+    .indtastningsfelt {
         padding: 20px 30px;
     }
 
