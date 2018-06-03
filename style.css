@@ -70,6 +70,13 @@ footer .postnummer,
     color: #dfd1d7;
 }
 
+.kontakt_mail a {
+    font-family: Helvetica Neue;
+    font-weight: 300;
+    font-size: 1em;
+    letter-spacing: 0.5px;
+}
+
 
 /*------- MOBIL --------*/
 
@@ -1228,9 +1235,6 @@ footer .postnummer,
 
 @media screen and (min-width:768px) and (max-width:1023px) {
 
-    body {
-        background-color: aqua;
-    }
 
     /*------- FORSIDE -------*/
     /* splash */
@@ -2704,26 +2708,10 @@ footer .postnummer,
         align-self: end;
     }
 
-    #privatpolitik_footer a {
-        color: black
-    }
-
-    #privatpolitik_footer a:hover {
-        color: #EED04F;
-    }
-
     #gavekort_footer {
         grid-column: 1 / 2;
         grid-row: 1 / 2;
         align-self: end;
-    }
-
-    #gavekort_footer a {
-        color: black
-    }
-
-    #gavekort_footer a:hover {
-        color: #EED04F;
     }
 
     #forsendelseogretur_footer {
@@ -2732,26 +2720,10 @@ footer .postnummer,
         align-self: end;
     }
 
-    #forsendelseogretur_footer a {
-        color: black
-    }
-
-    #forsendelseogretur_footer a:hover {
-        color: #EED04F;
-    }
-
     #reglerogvilkaar_footer {
         grid-column: 1 / 2;
         grid-row: 4 / 5;
         align-self: end;
-    }
-
-    #reglerogvilkaar_footer a {
-        color: black;
-    }
-
-    #reglerogvilkaar_footer a:hover {
-        color: #EED04F;
     }
 
 
